@@ -13,91 +13,30 @@ import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
 import { usePerformance } from "@/hooks/use-performance"
 
-// Type declarations for Three.js components
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      meshStandardMaterial: any
-      ambientLight: any
-      pointLight: any
-    }
-  }
-}
-
-// Dynamically import heavy 3D components
-const Canvas = lazy(() => import("@react-three/fiber").then(module => ({ default: module.Canvas })))
-const OrbitControls = lazy(() => import("@react-three/drei").then(module => ({ default: module.OrbitControls })))
-const Torus = lazy(() => import("@react-three/drei").then(module => ({ default: module.Torus })))
-
-// Error boundary for 3D Canvas
-function SafeCanvas({ children }: { readonly children: React.ReactNode }) {
-  const [hasError, setHasError] = useState(false)
-
-  useEffect(() => {
-    const handleError = () => setHasError(true)
-    window.addEventListener('error', handleError)
-    return () => window.removeEventListener('error', handleError)
-  }, [])
-
-  if (hasError) {
-    return (
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-pink-500/20">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
-    )
-  }
-
-  return <>{children}</>
-}
-
-// 3D Torus Component
-function AnimatedTorus() {
-  return (
-    <Torus args={[1, 0.4, 16, 100]} rotation={[0, 0, 0]}>
-      <meshStandardMaterial color="#8b5cf6" wireframe />
-    </Torus>
-  )
-}
+// Temporarily disable 3D components to fix custom domain issues
+// const Canvas = lazy(() => import("@react-three/fiber").then(module => ({ default: module.Canvas })))
+// const OrbitControls = lazy(() => import("@react-three/drei").then(module => ({ default: module.OrbitControls })))
+// const Torus = lazy(() => import("@react-three/drei").then(module => ({ default: module.Torus })))
 
 // Hero Section with optimized performance
 function HeroSection() {
   const [mounted, setMounted] = useState(false)
-  const [webGLSupported, setWebGLSupported] = useState(true)
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, 500], [0, 150])
   const { getAnimationConfig, shouldReduceAnimations } = usePerformance()
 
   useEffect(() => {
     setMounted(true)
-    
-    // Check WebGL support
-    const canvas = document.createElement('canvas')
-    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
-    if (!gl) {
-      setWebGLSupported(false)
-    }
   }, [])
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-purple-900">
       <div className="absolute inset-0 w-full h-full">
-        {mounted && webGLSupported && !shouldReduceAnimations ? (
-          <SafeCanvas>
-            <Canvas camera={{ position: [0, 0, 5] }}>
-              <ambientLight intensity={0.5} />
-              <pointLight position={[10, 10, 10]} />
-              <AnimatedTorus />
-              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1} />
-            </Canvas>
-          </SafeCanvas>
-        ) : (
-          // Fallback gradient background for devices without WebGL support or reduced motion
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-pink-500/20">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          </div>
-        )}
+        {/* Using fallback gradient background for stability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-pink-500/20">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
       </div>
 
       <motion.div 
