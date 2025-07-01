@@ -265,7 +265,7 @@ function ProcessSection() {
               <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
               <p className="text-gray-300">{step.description}</p>
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-blue-600 to-cyan-600 transform -translate-y-1/2"></div>
+                <div className="hidden md:block absolute top-8 left-full w-8 h-0.5 bg-gradient-to-r from-blue-600 to-cyan-600 transform -translate-y-1/2"></div>
               )}
             </motion.div>
           ))}
@@ -542,7 +542,7 @@ function ContactSection() {
 
 export default function WeboraPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navigation />
       <HeroSection />
       <ServicesSection />
