@@ -357,31 +357,27 @@ function ContactSection() {
     e.preventDefault();
 
     try {
-      // Create a proper FormData object for Web3Forms
-      const submitData = new FormData();
-      
-      // Add the access key and other required fields
-      submitData.append("access_key", "fdc68c16-282e-49e2-a6a9-93d9272e04e3");
-      submitData.append("name", formData.name);
-      submitData.append("email", formData.email);
-      submitData.append("projectType", formData.projectType);
-      submitData.append("budget", formData.budget);
-      submitData.append("message", formData.message);
-      submitData.append("from_name", "Webora Website");
-      submitData.append("subject", `New project inquiry from ${formData.name} - ${formData.projectType}`);
-      
-      // Add honeypot field to prevent spam
-      submitData.append("botcheck", "");
-      
-      // Add redirect URL for fallback
-      submitData.append("redirect", "https://www.luxestudio.live/webora");
+      // Use JSON payload for better CORS compatibility
+      const submitData = {
+        access_key: "fdc68c16-282e-49e2-a6a9-93d9272e04e3",
+        name: formData.name,
+        email: formData.email,
+        projectType: formData.projectType,
+        budget: formData.budget,
+        message: formData.message,
+        from_name: "Webora Website",
+        subject: `New project inquiry from ${formData.name} - ${formData.projectType}`,
+        botcheck: "", // Honeypot field for spam protection
+        redirect: "https://www.luxestudio.live/webora"
+      };
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: submitData,
         headers: {
+          "Content-Type": "application/json",
           "Accept": "application/json"
-        }
+        },
+        body: JSON.stringify(submitData)
       });
 
       const result = await response.json();
