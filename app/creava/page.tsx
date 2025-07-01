@@ -370,12 +370,9 @@ function ContactSection() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setIsError(false);
 
     try {
       // Create JSON payload for Web3Forms (production-ready)
@@ -413,14 +410,21 @@ function ContactSection() {
         });
         setTimeout(() => setIsSubmitted(false), 5000);
       } else {
-        throw new Error(result.message ?? "Submission failed");
+        throw new Error(result.message || "Submission failed");
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      setIsError(true);
-      setTimeout(() => setIsError(false), 5000);
-    } finally {
-      setIsSubmitting(false);
+      
+      // Fallback: create a mailto link as backup
+      const mailtoLink = `mailto:hello@luxestudio.live?subject=Creava Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AProject Type: ${formData.projectType}%0D%0ATimeline: ${formData.timeline}%0D%0AMessage: ${formData.message}`;
+      
+      const useMailto = confirm("There was an error submitting your message. Would you like to open your email client instead?");
+      if (useMailto) {
+        window.location.href = mailtoLink;
+      } else {
+        setIsError(true);
+        setTimeout(() => setIsError(false), 3000);
+      }
     }
   };
 
@@ -538,10 +542,9 @@ function ContactSection() {
                   <Button
                     type="submit"
                     size="lg"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white font-semibold py-3 rounded-lg transition-all duration-300"
                   >
-                    {isSubmitting ? "Starting..." : "Start Design Consultation"}
+                    Start Design Consultation
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </form>

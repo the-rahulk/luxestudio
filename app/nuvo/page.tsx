@@ -310,7 +310,6 @@ function ContactSection() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -319,7 +318,6 @@ function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    setIsSubmitting(true);
 
     try {
       // Use JSON payload for better CORS compatibility
@@ -332,6 +330,7 @@ function ContactSection() {
         from_name: "Nuvo Website",
         subject: `New inquiry from ${formData.name} - ${formData.company}`,
         botcheck: "", // Honeypot field for spam protection
+        redirect: "https://www.luxestudio.live/nuvo"
       };
 
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -350,13 +349,20 @@ function ContactSection() {
         setFormData({ name: "", email: "", company: "", message: "" });
         setTimeout(() => setIsSubmitted(false), 5000);
       } else {
-        throw new Error(result.message ?? "Submission failed");
+        throw new Error(result.message || "Submission failed");
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      setError("Submission failed. Please try again or contact us directly.");
-    } finally {
-      setIsSubmitting(false);
+      
+      // Fallback: create a mailto link as backup
+      const mailtoLink = `mailto:hello@luxestudio.live?subject=Nuvo Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company}%0D%0AMessage: ${formData.message}`;
+      
+      const useMailto = confirm("There was an error submitting your message. Would you like to open your email client instead?");
+      if (useMailto) {
+        window.location.href = mailtoLink;
+      } else {
+        setError("Submission failed. Please try again or contact us directly.");
+      }
     }
   };
 
@@ -454,10 +460,9 @@ function ContactSection() {
                   <Button
                     type="submit"
                     size="lg"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-semibold py-3 rounded-lg transition-all duration-300"
                   >
-                    {isSubmitting ? "Scheduling..." : "Schedule Free Consultation"}
+                    Schedule Free Consultation
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                   </form>
