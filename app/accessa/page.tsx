@@ -380,30 +380,26 @@ function ContactSection() {
     e.preventDefault();
 
     try {
-      // Create a proper FormData object for Web3Forms
-      const submitData = new FormData();
-      
-      // Add the access key and other required fields
-      submitData.append("access_key", "fdc68c16-282e-49e2-a6a9-93d9272e04e3");
-      submitData.append("name", formData.name);
-      submitData.append("email", formData.email);
-      submitData.append("website", formData.website);
-      submitData.append("message", formData.message);
-      submitData.append("from_name", "Accessa Website");
-      submitData.append("subject", `New accessibility inquiry from ${formData.name}`);
-      
-      // Add honeypot field to prevent spam
-      submitData.append("botcheck", "");
-      
-      // Add redirect URL for fallback
-      submitData.append("redirect", "https://www.luxestudio.live/accessa");
+      // Use JSON payload for better CORS compatibility
+      const submitData = {
+        access_key: "fdc68c16-282e-49e2-a6a9-93d9272e04e3",
+        name: formData.name,
+        email: formData.email,
+        website: formData.website,
+        message: formData.message,
+        from_name: "Accessa Website",
+        subject: `New accessibility inquiry from ${formData.name}`,
+        botcheck: "", // Honeypot field for spam protection
+        redirect: "https://www.luxestudio.live/accessa"
+      };
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: submitData,
         headers: {
+          "Content-Type": "application/json",
           "Accept": "application/json"
-        }
+        },
+        body: JSON.stringify(submitData)
       });
 
       const result = await response.json();
