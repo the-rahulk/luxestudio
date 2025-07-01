@@ -19,6 +19,7 @@ import {
   Scale,
   Heart,
   CheckCircle,
+  XCircle,
   Star,
   Award,
 } from "lucide-react"
@@ -371,6 +372,8 @@ function ContactSection() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -378,6 +381,8 @@ function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setIsError(false);
 
     try {
       // Use JSON payload for better CORS compatibility
@@ -390,7 +395,6 @@ function ContactSection() {
         from_name: "Accessa Website",
         subject: `New accessibility inquiry from ${formData.name}`,
         botcheck: "", // Honeypot field for spam protection
-        redirect: "https://www.luxestudio.live/accessa"
       };
 
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -409,20 +413,14 @@ function ContactSection() {
         setFormData({ name: "", email: "", website: "", message: "" });
         setTimeout(() => setIsSubmitted(false), 5000);
       } else {
-        throw new Error(result.message || "Submission failed");
+        throw new Error(result.message ?? "Submission failed");
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      
-      // Fallback: create a mailto link as backup
-      const mailtoLink = `mailto:hello@luxestudio.live?subject=Accessa Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AWebsite: ${formData.website}%0D%0AMessage: ${formData.message}`;
-      
-      const useMailto = confirm("There was an error submitting your message. Would you like to open your email client instead?");
-      if (useMailto) {
-        window.location.href = mailtoLink;
-      } else {
-        alert("Form submission failed. Please try again or contact us directly.");
-      }
+      setIsError(true);
+      setTimeout(() => setIsError(false), 5000);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -448,7 +446,7 @@ function ContactSection() {
         >
           <Card className="bg-white/5 backdrop-blur-md border border-white/10">
             <CardContent className="p-8">
-              {isSubmitted ? (
+              {isSubmitted && (
                 <div className="text-center py-8">
                   <div className="inline-flex p-4 rounded-full bg-green-500/20 mb-4">
                     <CheckCircle className="h-8 w-8 text-green-400" />
@@ -456,7 +454,23 @@ function ContactSection() {
                   <h3 className="text-2xl font-bold text-white mb-2">Thank you!</h3>
                   <p className="text-gray-300">We'll send you a detailed accessibility report within 48 hours.</p>
                 </div>
-              ) : (
+              )}
+              {isError && (
+                <div className="text-center py-8">
+                  <div className="inline-flex p-4 rounded-full bg-red-500/20 mb-4">
+                    <XCircle className="h-8 w-8 text-red-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Oops!</h3>
+                  <p className="text-gray-300 mb-4">There was an error submitting your request. Please try again.</p>
+                  <Button 
+                    onClick={() => setIsError(false)}
+                    className="bg-green-600 hover:bg-green-700"
+                  >
+                    Try Again
+                  </Button>
+                </div>
+              )}
+              {!isSubmitted && !isError && (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -512,9 +526,10 @@ function ContactSection() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 text-lg rounded-lg transition-all duration-300"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 text-lg rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Get Free Audit Report
+                    {isSubmitting ? "Getting Report..." : "Get Free Audit Report"}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </form>
