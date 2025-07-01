@@ -403,7 +403,7 @@ function ContactSection() {
       console.error("Form submission error:", error);
       
       // Fallback: create a mailto link as backup
-      const mailtoLink = `mailto:contact@luxestudio.live?subject=Webora Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AProject Type: ${formData.projectType}%0D%0ABudget: ${formData.budget}%0D%0AMessage: ${formData.message}`;
+      const mailtoLink = `mailto:hello@luxestudio.live?subject=Webora Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AProject Type: ${formData.projectType}%0D%0ABudget: ${formData.budget}%0D%0AMessage: ${formData.message}`;
       
       const useMailto = confirm("There was an error submitting your message. Would you like to open your email client instead?");
       if (useMailto) {
