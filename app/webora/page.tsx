@@ -352,9 +352,12 @@ function ContactSection() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setIsError(false);
 
     try {
       // Use JSON payload for better CORS compatibility
@@ -368,7 +371,6 @@ function ContactSection() {
         from_name: "Webora Website",
         subject: `New project inquiry from ${formData.name} - ${formData.projectType}`,
         botcheck: "", // Honeypot field for spam protection
-        redirect: "https://www.luxestudio.live/webora"
       };
 
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -393,21 +395,14 @@ function ContactSection() {
         });
         setTimeout(() => setIsSubmitted(false), 5000);
       } else {
-        throw new Error(result.message || "Submission failed");
+        throw new Error(result.message ?? "Submission failed");
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      
-      // Fallback: create a mailto link as backup
-      const mailtoLink = `mailto:hello@luxestudio.live?subject=Webora Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AProject Type: ${formData.projectType}%0D%0ABudget: ${formData.budget}%0D%0AMessage: ${formData.message}`;
-      
-      const useMailto = confirm("There was an error submitting your message. Would you like to open your email client instead?");
-      if (useMailto) {
-        window.location.href = mailtoLink;
-      } else {
-        setIsError(true);
-        setTimeout(() => setIsError(false), 3000);
-      }
+      setIsError(true);
+      setTimeout(() => setIsError(false), 5000);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -525,9 +520,10 @@ function ContactSection() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-lg transition-all duration-300"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Get Project Quote
+                    {isSubmitting ? "Getting Quote..." : "Get Project Quote"}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </form>
