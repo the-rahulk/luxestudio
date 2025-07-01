@@ -138,7 +138,7 @@ function BrandsSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 brands-grid">
           {brands.map((brand, index) => (
             <motion.div
               key={brand.name}
@@ -148,32 +148,13 @@ function BrandsSection() {
               viewport={{ once: true }}
             >
               <button 
-                className="block h-full w-full mobile-click text-left"
+                className="block h-full w-full text-left"
                 onClick={(e) => {
                   e.preventDefault()
                   e.stopPropagation()
                   
                   console.log('Navigating to:', brand.href)
-                  
-                  try {
-                    // Try Next.js router first
-                    router.push(brand.href)
-                  } catch (error) {
-                    console.log('Router failed, using window.location:', error)
-                    // Fallback to window.location for mobile issues
-                    window.location.href = brand.href
-                  }
-                }}
-                onTouchEnd={(e) => {
-                  // Additional touch event for mobile
-                  e.preventDefault()
-                  console.log('Touch navigation to:', brand.href)
-                  try {
-                    router.push(brand.href)
-                  } catch (error) {
-                    console.error('Navigation error:', error)
-                    window.location.href = brand.href
-                  }
+                  router.push(brand.href)
                 }}
                 type="button"
               >
@@ -338,38 +319,52 @@ function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Build form fields for Web3Forms
-    const data = {
-      access_key: "fdc68c16-282e-49e2-a6a9-93d9272e04e3", // 🔁 Replace with your real key
-      from_name: "LuxeStudio Homepage",
-      subject: "New Inquiry from LuxeStudio Homepage",
-      name: formData.name,
-      email: formData.email,
-      service: formData.service,
-      message: formData.message,
-    };
-
-    const formBody = new FormData();
-    Object.entries(data).forEach(([key, value]) => {
-      formBody.append(key, value);
-    });
-
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      // Create a proper FormData object for Web3Forms
+      const submitData = new FormData();
+      
+      // Add the access key and other required fields
+      submitData.append("access_key", "fdc68c16-282e-49e2-a6a9-93d9272e04e3");
+      submitData.append("name", formData.name);
+      submitData.append("email", formData.email);
+      submitData.append("service", formData.service);
+      submitData.append("message", formData.message);
+      submitData.append("from_name", "LuxeStudio Website");
+      submitData.append("subject", `New inquiry from ${formData.name} - ${formData.service}`);
+      
+      // Add honeypot field to prevent spam
+      submitData.append("botcheck", "");
+      
+      // Add redirect URL for fallback
+      submitData.append("redirect", "https://www.luxestudio.live/");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formBody,
+        body: submitData,
+        headers: {
+          "Accept": "application/json"
+        }
       });
 
-      if (res.ok) {
-        setIsSubmitted(true); // ✅ Show thank you message
-        setFormData({ name: "", email: "", service: "", message: "" }); // 🔁 Reset fields
-        setTimeout(() => setIsSubmitted(false), 9000); // ⏱️ Hide toast after 4s
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", service: "", message: "" });
+        setTimeout(() => setIsSubmitted(false), 5000);
       } else {
-        alert("Submission failed. Please try again.");
+        throw new Error(result.message || "Submission failed");
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred while submitting the form.");
+      console.error("Form submission error:", error);
+      
+      // Fallback: create a mailto link as backup
+      const mailtoLink = `mailto:contact@luxestudio.live?subject=Website Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AService: ${formData.service}%0D%0AMessage: ${formData.message}`;
+      
+      const useMailto = confirm("There was an error submitting your message. Would you like to open your email client instead?");
+      if (useMailto) {
+        window.location.href = mailtoLink;
+      }
     }
   };
 

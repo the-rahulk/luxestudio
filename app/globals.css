@@ -276,3 +276,35 @@ form [role="combobox"]:focus {
   scroll-behavior: auto !important;
   scroll-margin: 0 !important;
 }
+
+/* Mobile touch improvements */
+.card-clickable {
+  /* Prevent touch callouts on mobile */
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Improve touch responsiveness */
+  touch-action: manipulation;
+  user-select: none;
+}
+
+/* Prevent accidental touch navigation during scroll */
+.brands-grid {
+  /* Allow scrolling but prevent touch delays */
+  touch-action: pan-y pinch-zoom;
+}
+
+/* Ensure buttons are properly touchable */
+button[type="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improve form touch handling */
+.custom-select {
+  touch-action: manipulation;
+}
+
+.custom-select button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
