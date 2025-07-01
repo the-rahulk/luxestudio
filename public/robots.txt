@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Allow all pages to be crawled
+Allow: /nuvo
+Allow: /webora
+Allow: /accessa
+Allow: /creava
+
+# Block private/admin areas (if any in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /api/
+
+# Allow common assets
+Allow: /favicon.ico
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Crawl delay (be respectful to server resources)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.luxestudio.live/sitemap.xml

@@ -319,40 +319,54 @@ function ContactSection() {
     e.preventDefault();
     setError("");
 
-    const data = {
-      access_key: "fdc68c16-282e-49e2-a6a9-93d9272e04e3", // 🔁 Replace with your Web3Forms access key
-      from_name: "Nuvo",
-      subject: "New Message from Nuvo Form",
-      name: formData.name,
-      email: formData.email,
-      company: formData.company,
-      message: formData.message,
-      botcheck: "" // Honeypot for spam prevention
-    };
-
-    const formDataToSend = new FormData();
-    for (const key in data) {
-      formDataToSend.append(key, data[key as keyof typeof data]);
-    }
-
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      // Create a proper FormData object for Web3Forms
+      const submitData = new FormData();
+      
+      // Add the access key and other required fields
+      submitData.append("access_key", "fdc68c16-282e-49e2-a6a9-93d9272e04e3");
+      submitData.append("name", formData.name);
+      submitData.append("email", formData.email);
+      submitData.append("company", formData.company);
+      submitData.append("message", formData.message);
+      submitData.append("from_name", "Nuvo Website");
+      submitData.append("subject", `New inquiry from ${formData.name} - ${formData.company}`);
+      
+      // Add honeypot field to prevent spam
+      submitData.append("botcheck", "");
+      
+      // Add redirect URL for fallback
+      submitData.append("redirect", "https://www.luxestudio.live/nuvo");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formDataToSend
+        body: submitData,
+        headers: {
+          "Accept": "application/json"
+        }
       });
 
-      const result = await res.json();
+      const result = await response.json();
 
-      if (result.success) {
+      if (response.ok && result.success) {
         setIsSubmitted(true);
         setFormData({ name: "", email: "", company: "", message: "" });
-        setTimeout(() => setIsSubmitted(false), 4000);
+        setTimeout(() => setIsSubmitted(false), 5000);
       } else {
-        setError("Submission failed. Please try again.");
+        throw new Error(result.message || "Submission failed");
       }
-    } catch (err) {
-      console.error('Form submission error:', err);
-      setError("An error occurred. Please try again later.");
+    } catch (error) {
+      console.error("Form submission error:", error);
+      
+      // Fallback: create a mailto link as backup
+      const mailtoLink = `mailto:contact@luxestudio.live?subject=Nuvo Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company}%0D%0AMessage: ${formData.message}`;
+      
+      const useMailto = confirm("There was an error submitting your message. Would you like to open your email client instead?");
+      if (useMailto) {
+        window.location.href = mailtoLink;
+      } else {
+        setError("Submission failed. Please try again or contact us directly.");
+      }
     }
   };
 

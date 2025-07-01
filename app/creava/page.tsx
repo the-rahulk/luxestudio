@@ -374,25 +374,37 @@ function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const payload = {
-      access_key: "fdc68c16-282e-49e2-a6a9-93d9272e04e3", // 🔁 Replace with actual key
-      subject: "Creava Contact Request", // 👈 Helps you identify source
-      botcheck: "", // 👀 For spam filtering
-      ...formData,
-    };
-
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      // Create a proper FormData object for Web3Forms
+      const submitData = new FormData();
+      
+      // Add the access key and other required fields
+      submitData.append("access_key", "fdc68c16-282e-49e2-a6a9-93d9272e04e3");
+      submitData.append("name", formData.name);
+      submitData.append("email", formData.email);
+      submitData.append("projectType", formData.projectType);
+      submitData.append("timeline", formData.timeline);
+      submitData.append("message", formData.message);
+      submitData.append("from_name", "Creava Website");
+      submitData.append("subject", `New design inquiry from ${formData.name} - ${formData.projectType}`);
+      
+      // Add honeypot field to prevent spam
+      submitData.append("botcheck", "");
+      
+      // Add redirect URL for fallback
+      submitData.append("redirect", "https://www.luxestudio.live/creava");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
+        body: submitData,
         headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
+          "Accept": "application/json"
+        }
       });
 
-      const data = await res.json();
+      const result = await response.json();
 
-      if (data.success) {
+      if (response.ok && result.success) {
         setIsSubmitted(true);
         setFormData({
           name: "",
@@ -401,15 +413,23 @@ function ContactSection() {
           timeline: "",
           message: "",
         });
-        setTimeout(() => setIsSubmitted(false), 3000);
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        throw new Error(result.message || "Submission failed");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      
+      // Fallback: create a mailto link as backup
+      const mailtoLink = `mailto:contact@luxestudio.live?subject=Creava Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AProject Type: ${formData.projectType}%0D%0ATimeline: ${formData.timeline}%0D%0AMessage: ${formData.message}`;
+      
+      const useMailto = confirm("There was an error submitting your message. Would you like to open your email client instead?");
+      if (useMailto) {
+        window.location.href = mailtoLink;
       } else {
         setIsError(true);
         setTimeout(() => setIsError(false), 3000);
       }
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setIsError(true);
-      setTimeout(() => setIsError(false), 3000);
     }
   };
 
