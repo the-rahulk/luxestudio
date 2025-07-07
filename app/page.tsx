@@ -524,6 +524,195 @@ function ContactSection() {
   )
 }
 
+// Custom hook for smooth counter animation
+function useCountUp(target: number, isVisible: boolean, duration = 2500) {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    let startTime: number
+    let animationFrame: number
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp
+      const progress = Math.min((timestamp - startTime) / duration, 1)
+      
+      // Easing function for smooth animation
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3)
+      
+      setCount(Math.floor(easeOutCubic * target))
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate)
+      }
+    }
+
+    animationFrame = requestAnimationFrame(animate)
+
+    return () => cancelAnimationFrame(animationFrame)
+  }, [target, isVisible, duration])
+
+  return count
+}
+
+// Animated Stats Section with proper theme matching
+function StatsSection() {
+  const [isVisible, setIsVisible] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+  
+  const statsData = [
+    { 
+      target: 150, 
+      suffix: '+', 
+      label: 'Happy Clients', 
+      icon: <Users className="h-8 w-8" />,
+      gradient: 'from-purple-600 to-pink-600'
+    },
+    { 
+      target: 10, 
+      suffix: '+', 
+      label: 'Countries Served', 
+      icon: <Globe className="h-8 w-8" />,
+      gradient: 'from-blue-600 to-cyan-600'
+    },
+    { 
+      target: 5, 
+      suffix: '+', 
+      label: 'Industries', 
+      icon: <Target className="h-8 w-8" />,
+      gradient: 'from-green-600 to-emerald-600'
+    }
+  ]
+
+  // Individual counters for each stat
+  const clientsCount = useCountUp(150, isVisible, 2500)
+  const countriesCount = useCountUp(10, isVisible, 2200)
+  const industriesCount = useCountUp(5, isVisible, 1800)
+  
+  const counts = [clientsCount, countriesCount, industriesCount]
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isMounted) return
+
+    // Universal intersection observer that works on all devices
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // More reliable visibility check
+          const isIntersecting = entry.isIntersecting && entry.intersectionRatio > 0.2
+          if (isIntersecting && !isVisible) {
+            setIsVisible(true)
+          }
+        })
+      },
+      { 
+        threshold: [0, 0.2, 0.3, 0.5], // Multiple thresholds for better detection
+        rootMargin: '0px 0px -10% 0px' // Trigger when 10% from bottom of viewport
+      }
+    )
+
+    const statsElement = document.getElementById('stats-section')
+    if (statsElement) {
+      observer.observe(statsElement)
+    }
+
+    return () => observer.disconnect()
+  }, [isVisible, isMounted])
+
+  return (
+    <section id="stats-section" className="py-20 bg-gradient-to-br from-gray-900 via-black to-purple-900/50 relative overflow-hidden">
+      {/* Background decorative elements matching main theme */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Trusted by Industry Leaders
+          </h2>
+          <p className="text-xl text-gray-300">Our track record speaks for itself</p>
+        </motion.div>
+
+        {/* Stats Grid - 3 items in a row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-16">
+          {statsData.map((stat, index) => (
+            <motion.div
+              key={index}
+              className="text-center group"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105">
+                {/* Icon with gradient background */}
+                <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${stat.gradient} mb-6 group-hover:animate-pulse`}>
+                  {stat.icon}
+                </div>
+                
+                {/* Animated Counter */}
+                <div className="text-5xl md:text-6xl font-bold mb-4">
+                  <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    {counts[index]}
+                    {stat.suffix}
+                  </span>
+                </div>
+                
+                {/* Label */}
+                <p className="text-lg md:text-xl text-gray-300 font-medium">
+                  {stat.label}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Trust Line - centered below stats */}
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="inline-block">
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-8 py-4 hover:bg-white/10 transition-all duration-300">
+              <span className="text-lg md:text-xl text-gray-300 font-medium">
+                Trusted by{" "}
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-bold">
+                  Startups
+                </span>
+                ,{" "}
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-bold">
+                  Agencies
+                </span>
+                {" "}&{" "}
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-bold">
+                  Entrepreneurs
+                </span>
+              </span>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
 export default function HomePage() {
   useEffect(() => {
     // Handle hash navigation when page loads (for direct links like /#brands)
@@ -549,6 +738,7 @@ export default function HomePage() {
       <HeroSection />
       <BrandsSection />
       <WhyChooseSection />
+      <StatsSection />
       <CTASection />
       <ContactSection />
       <Footer />
