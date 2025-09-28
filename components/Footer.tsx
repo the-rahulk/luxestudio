@@ -1,12 +1,32 @@
+"use client"
+
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Mail, X } from "lucide-react"
 
 export default function Footer() {
+  const router = useRouter()
+
+  const handleContactNavigation = () => {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      router.push('/');
+      setTimeout(() => {
+        const contactElement = document.getElementById('contact');
+        if (contactElement) {
+          contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 500);
+    }
+  };
+
   return (
     <footer className="bg-gray-900 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <h3 className="text-2xl font-bold text-white mb-4">LuxeStudio</h3>
             <p className="text-gray-300 mb-4 max-w-md">
               A creative technology studio delivering exceptional digital solutions across automation, accessibility,
@@ -66,18 +86,52 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-gray-300 hover:text-white transition-colors">
-                
                   Home
                 </Link>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
+                <button 
+                  onClick={handleContactNavigation}
+                  className="text-gray-300 hover:text-white transition-colors text-left"
+                >
                   Contact
-                </a>
+                </button>
               </li>
-              
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Legal</h4>
+            <ul className="space-y-2">
               <li>
-                
+                <Link href="/terms-and-conditions" className="text-gray-300 hover:text-white transition-colors">
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/refund-policy" className="text-gray-300 hover:text-white transition-colors">
+                  Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/shipping-policy" className="text-gray-300 hover:text-white transition-colors">
+                  Service Delivery
+                </Link>
+              </li>
+              <li>
+                <Link href="/cancellation-policy" className="text-gray-300 hover:text-white transition-colors">
+                  Cancellation Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/billing-policy" className="text-gray-300 hover:text-white transition-colors">
+                  Billing Policy
+                </Link>
               </li>
             </ul>
           </div>

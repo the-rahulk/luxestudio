@@ -52,7 +52,7 @@ const handleContactNavigation = (router: any) => {
           block: 'start',
         })
       }
-    }, 100)
+    }, 500)
   }
 }
 
