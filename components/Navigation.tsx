@@ -1,226 +1,234 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Menu, X, ArrowUp } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 
-// Smooth scroll function for anchor links
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
-  }
-}
-
-// Handle navigation with hash scrolling
 const handleBrandsNavigation = (router: any) => {
-  // Always navigate to homepage brands section
   router.push('/')
   setTimeout(() => {
     const element = document.getElementById('brands')
     if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }, 100)
 }
 
-// Handle contact navigation
-const handleContactNavigation = (router: any) => {
-  const element = document.getElementById('contact')
-  if (element) {
-    // If contact section exists on current page, scroll to it
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
-  } else {
-    // If contact section doesn't exist, navigate to homepage contact
-    router.push('/')
-    setTimeout(() => {
-      const contactElement = document.getElementById('contact')
-      if (contactElement) {
-        contactElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        })
-      }
-    }, 500)
-  }
-}
-
 export default function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
+  const [showScrollTop, setShowScrollTop] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
-    setMounted(true)
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setShowScrollTop(window.scrollY > 100)
+      setIsScrolled(window.scrollY > 20)
     }
-    window.addEventListener("scroll", handleScroll)
-    
-    // Handle hash navigation on page load
-    const hash = window.location.hash
-    if (hash) {
-      setTimeout(() => {
-        const element = document.getElementById(hash.slice(1))
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          })
-        }
-      }, 100)
-    }
-    
-    return () => window.removeEventListener("scroll", handleScroll)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return (
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex-shrink-0">
-              <Link href="/" className="text-2xl font-bold text-white">
-                LuxeStudio
-              </Link>
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  return (
+    <>
+      <nav style={{ 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        right: 0, 
+        zIndex: 999999,
+        background: isScrolled 
+          ? 'linear-gradient(135deg, rgba(0,0,0,0.98) 0%, rgba(20,20,20,0.98) 100%)'
+          : 'linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(20,20,20,0.85) 100%)',
+        backdropFilter: 'blur(20px)',
+        borderBottom: isScrolled 
+          ? '1px solid rgba(251, 176, 64, 0.3)'
+          : '1px solid rgba(255, 255, 255, 0.1)',
+        boxShadow: isScrolled 
+          ? '0 8px 32px rgba(251, 176, 64, 0.15)'
+          : '0 4px 16px rgba(0, 0, 0, 0.2)',
+        width: '100%',
+        transition: 'all 0.3s ease'
+      }}>
+        <div style={{ maxWidth: '80rem', margin: '0 auto', padding: '0 1.5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '80px' }}>
+            <Link href="/" style={{ 
+              fontSize: '2rem', 
+              fontWeight: 'bold', 
+              background: 'linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #fb923c 100%)', 
+              WebkitBackgroundClip: 'text', 
+              WebkitTextFillColor: 'transparent',
+              textDecoration: 'none',
+              letterSpacing: '-0.02em',
+              textShadow: '0 0 30px rgba(251, 176, 64, 0.3)',
+              transition: 'all 0.3s ease'
+            }}>
+              LuxeStudio
+            </Link>
+
+            <div className="desktop-menu lg:flex items-center gap-2" style={{ display: 'none' }}>
+              <Link href="/" style={{ 
+                color: '#d1d5db', 
+                textDecoration: 'none', 
+                padding: '0.625rem 1.25rem', 
+                fontSize: '0.9375rem', 
+                fontWeight: '500',
+                borderRadius: '0.75rem',
+                transition: 'all 0.3s ease',
+                position: 'relative'
+              }} className="nav-link">Home</Link>
+              <button onClick={() => handleBrandsNavigation(router)} style={{ 
+                color: '#d1d5db', 
+                background: 'none', 
+                border: 'none', 
+                cursor: 'pointer', 
+                padding: '0.625rem 1.25rem', 
+                fontSize: '0.9375rem', 
+                fontWeight: '500',
+                borderRadius: '0.75rem',
+                transition: 'all 0.3s ease'
+              }} className="nav-link">Brands</button>
+              <Link href="/portfolio" style={{ 
+                color: '#d1d5db', 
+                textDecoration: 'none', 
+                padding: '0.625rem 1.25rem', 
+                fontSize: '0.9375rem', 
+                fontWeight: '500',
+                borderRadius: '0.75rem',
+                transition: 'all 0.3s ease'
+              }} className="nav-link">Portfolio</Link>
+              <Link href="/about-us" style={{ 
+                color: '#d1d5db', 
+                textDecoration: 'none', 
+                padding: '0.625rem 1.25rem', 
+                fontSize: '0.9375rem', 
+                fontWeight: '500',
+                borderRadius: '0.75rem',
+                transition: 'all 0.3s ease'
+              }} className="nav-link">About Us</Link>
+              <Link href="/contact-us" style={{ 
+                color: '#d1d5db', 
+                textDecoration: 'none', 
+                padding: '0.625rem 1.25rem', 
+                fontSize: '0.9375rem', 
+                fontWeight: '500',
+                borderRadius: '0.75rem',
+                transition: 'all 0.3s ease',
+                marginRight: '0.5rem'
+              }} className="nav-link">Contact Us</Link>
+              <a href="https://wa.me/919987031290" target="_blank" rel="noopener noreferrer" style={{ 
+                background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', 
+                color: 'white', 
+                padding: '0.75rem 2rem', 
+                borderRadius: '9999px', 
+                fontSize: '0.9375rem', 
+                fontWeight: '700', 
+                textDecoration: 'none', 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                gap: '0.5rem',
+                boxShadow: '0 4px 16px rgba(16, 185, 129, 0.4)',
+                transition: 'all 0.3s ease',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }} className="whatsapp-btn">
+                <svg style={{ width: '1.25rem', height: '1.25rem' }} fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Enquire Now
+              </a>
             </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <Link
-                  href="/"
-                  className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
-                >
-                  Home
-                </Link>                <Link
-                  href="/#brands"
-                  className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
-                >
-                  Brands
-                </Link>
-              <Link
-                href="/#contact"
-                className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
-              >
-                Contact
-              </Link>
-              </div>
-            </div>
-            <div className="md:hidden">
-              <button className="text-gray-300 hover:text-white">
-                <Menu size={24} />
+
+            <div className="lg:hidden">
+              <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} style={{ 
+                color: '#fbbf24', 
+                background: 'rgba(251, 191, 36, 0.1)', 
+                border: '1px solid rgba(251, 191, 36, 0.3)', 
+                cursor: 'pointer', 
+                padding: '0.625rem',
+                borderRadius: '0.75rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
             </div>
           </div>
         </div>
       </nav>
-    )
-  }
 
-  return (
-    <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 gpu-accelerated ${
-        isScrolled ? "bg-black/20 backdrop-blur-md border-b border-white/10" : "bg-transparent"
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-white">
-              LuxeStudio
-            </Link>
-          </div>
+      {/* Scroll to Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            onClick={scrollToTop}
+            style={{
+              position: 'fixed',
+              bottom: '2rem',
+              right: '2rem',
+              zIndex: 999998,
+              background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)',
+              color: '#000',
+              width: '3.5rem',
+              height: '3.5rem',
+              borderRadius: '50%',
+              border: '2px solid rgba(255, 255, 255, 0.2)',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 8px 24px rgba(251, 191, 36, 0.4)',
+              transition: 'all 0.3s ease'
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="scroll-top-btn"
+          >
+            <ArrowUp size={24} strokeWidth={3} />
+          </motion.button>
+        )}
+      </AnimatePresence>
 
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <Link
-                href="/"
-                className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
-              >
-                Home
-              </Link>
-              <button
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleBrandsNavigation(router)
-                }}
-                className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
-              >
-                Brands
-              </button>
-              <button
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleContactNavigation(router)
-                }}
-                className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
-              >
-                Contact
-              </button>
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div className="fixed inset-0 z-[999998] lg:hidden" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-950/50 to-black">
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl animate-pulse"></div>
             </div>
-          </div>
-
-          <div className="md:hidden">
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-300 hover:text-white">
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {isMobileMenuOpen && (
-        <motion.div
-          className="md:hidden bg-black/90 backdrop-blur-md"
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link
-              href="/"
-              className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <button
-              onClick={(e) => {
-                e.preventDefault()
-                setIsMobileMenuOpen(false)
-                handleBrandsNavigation(router)
-              }}
-              className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium w-full text-left"
-            >
-              Brands
-            </button>
-            <button
-              onClick={(e) => {
-                e.preventDefault()
-                setIsMobileMenuOpen(false)
-                handleContactNavigation(router)
-              }}
-              className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium w-full text-left"
-            >
-              Contact
-            </button>
-          </div>
-        </motion.div>
-      )}
-    </motion.nav>
+            <motion.div className="relative h-full flex flex-col items-center justify-center p-8" initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+              <div className="mb-12">
+                <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                  <span className="text-4xl font-bold bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">LuxeStudio</span>
+                </Link>
+              </div>
+              <div className="flex flex-col items-center space-y-6 w-full max-w-sm">
+                <Link href="/" className="block text-center text-2xl font-semibold text-white hover:text-amber-400 py-4 px-8 rounded-2xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm border border-white/10" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+                <button onClick={() => { setIsMobileMenuOpen(false); handleBrandsNavigation(router); }} className="w-full text-center text-2xl font-semibold text-white hover:text-amber-400 py-4 px-8 rounded-2xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm border border-white/10">Brands</button>
+                <Link href="/portfolio" className="block text-center text-2xl font-semibold text-white hover:text-amber-400 py-4 px-8 rounded-2xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm border border-white/10" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</Link>
+                <Link href="/about-us" className="block text-center text-2xl font-semibold text-white hover:text-amber-400 py-4 px-8 rounded-2xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm border border-white/10" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+                <Link href="/contact-us" className="block text-center text-2xl font-semibold text-white hover:text-amber-400 py-4 px-8 rounded-2xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm border border-white/10" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+                <a href="https://wa.me/919987031290" target="_blank" rel="noopener noreferrer" className="block bg-gradient-to-r from-green-500 to-green-600 text-white py-5 px-8 rounded-2xl text-xl font-bold text-center transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-green-500/50 flex items-center justify-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
+                  <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  Enquire Now
+                </a>
+              </div>
+            </motion.div>
+            <div className="absolute inset-0 -z-10" onClick={() => setIsMobileMenuOpen(false)}></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }

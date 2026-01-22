@@ -30,8 +30,8 @@ function HeroSection() {
   }, [])
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-purple-900">
-      <div className="absolute inset-0 w-full h-full">
+    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-purple-900" style={{ height: 'calc(100vh - 80px)', zIndex: 1 }}>
+      <div className="absolute inset-0 w-full h-full z-0">
         {/* Using fallback gradient background for stability */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-pink-500/20">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -40,7 +40,7 @@ function HeroSection() {
       </div>
 
       <motion.div 
-        className="relative z-10 text-center px-4 max-w-4xl mx-auto optimize-animations" 
+        className="relative z-[1] text-center px-4 max-w-4xl mx-auto optimize-animations" 
         style={shouldReduceAnimations ? {} : { y }}
       >
         <motion.h1
@@ -124,7 +124,7 @@ function BrandsSection() {
   ]
 
   return (
-    <section id="brands" className="py-20 bg-black">
+    <section id="brands" className="py-20 bg-black relative" style={{ zIndex: 1 }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -213,7 +213,7 @@ function WhyChooseSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
+    <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative" style={{ zIndex: 1 }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -257,7 +257,7 @@ function CTASection() {
   }, [])
 
   return (
-    <section className="py-20 bg-gradient-to-r from-purple-900 via-black to-pink-900">
+    <section className="py-20 bg-gradient-to-r from-purple-900 via-black to-pink-900 relative" style={{ zIndex: 1 }}>
       <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -378,7 +378,7 @@ function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-black">
+    <section id="contact" className="py-20 bg-black relative" style={{ zIndex: 1 }}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -470,7 +470,7 @@ function ContactSection() {
                       </button>
                       
                       {isSelectOpen && (
-                        <div className="absolute top-full left-0 right-0 mt-1 bg-gray-900 border border-white/20 rounded-md shadow-lg z-50 max-h-60 overflow-auto">
+                        <div className="absolute top-full left-0 right-0 mt-1 bg-gray-900 border border-white/20 rounded-md shadow-lg z-10 max-h-60 overflow-auto">
                           {serviceOptions.map((option) => (
                             <button
                               key={option.value}
@@ -625,7 +625,7 @@ function StatsSection() {
   }, [isVisible, isMounted])
 
   return (
-    <section id="stats-section" className="py-20 bg-gradient-to-br from-gray-900 via-black to-purple-900/50 relative overflow-hidden">
+    <section id="stats-section" className="py-20 bg-gradient-to-br from-gray-900 via-black to-purple-900/50 relative overflow-hidden" style={{ zIndex: 1 }}>
       {/* Background decorative elements matching main theme */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -633,7 +633,7 @@ function StatsSection() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[1]">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
@@ -735,13 +735,15 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navigation />
-      <HeroSection />
-      <BrandsSection />
-      <WhyChooseSection />
-      <StatsSection />
-      <CTASection />
-      <ContactSection />
-      <Footer />
+      <div style={{ paddingTop: '80px' }}>
+        <HeroSection />
+        <BrandsSection />
+        <WhyChooseSection />
+        <StatsSection />
+        <CTASection />
+        <ContactSection />
+        <Footer />
+      </div>
     </div>
   )
 }
