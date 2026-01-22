@@ -147,6 +147,39 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Ensure navigation stays visible */
+nav[style*="position: fixed"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  width: 100% !important;
+}
+
+/* Desktop menu visibility */
+@media (min-width: 1024px) {
+  .desktop-menu {
+    display: flex !important;
+  }
+}
+
+/* Premium navbar hover effects */
+.nav-link:hover {
+  color: #fbbf24 !important;
+  background: rgba(251, 191, 36, 0.1) !important;
+  transform: translateY(-1px);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.6) !important;
+}
+
+.scroll-top-btn:hover {
+  box-shadow: 0 12px 32px rgba(251, 191, 36, 0.6) !important;
+}
+
 /* Glassmorphism effect */
 .glass {
   background: rgba(255, 255, 255, 0.05);

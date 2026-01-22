@@ -150,7 +150,7 @@ export default function Footer() {
               
               
             </div>
-            <div className="text-gray-300 md:text-right">© 2025 LuxeStudio. All rights reserved.</div>
+            <div className="text-gray-300 md:text-right">© 2026 LuxeStudio. All rights reserved.</div>
           </div>
         </div>
       </div>
