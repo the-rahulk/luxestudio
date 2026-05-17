@@ -304,6 +304,7 @@ function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     message: "",
   });
@@ -325,6 +326,7 @@ function ContactSection() {
         access_key: "fdc68c16-282e-49e2-a6a9-93d9272e04e3",
         name: formData.name,
         email: formData.email,
+        phone: formData.phone,
         company: formData.company,
         message: formData.message,
         from_name: "Nuvo Website",
@@ -346,7 +348,7 @@ function ContactSection() {
 
       if (response.ok && result.success) {
         setIsSubmitted(true);
-        setFormData({ name: "", email: "", company: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", company: "", message: "" });
         setTimeout(() => setIsSubmitted(false), 5000);
       } else {
         throw new Error(result.message || "Submission failed");
@@ -355,7 +357,7 @@ function ContactSection() {
       console.error("Form submission error:", error);
       
       // Fallback: create a mailto link as backup
-      const mailtoLink = `mailto:hello@luxestudio.live?subject=Nuvo Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company}%0D%0AMessage: ${formData.message}`;
+      const mailtoLink = `mailto:hello@luxestudio.live?subject=Nuvo Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACompany: ${formData.company}%0D%0AMessage: ${formData.message}`;
       
       const useMailto = confirm("There was an error submitting your message. Would you like to open your email client instead?");
       if (useMailto) {
@@ -429,6 +431,17 @@ function ContactSection() {
                         required
                       />
                     </div>
+                  </div>
+                  <div>
+                    <label htmlFor="nuvo-phone" className="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                    <Input
+                      id="nuvo-phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => handleChange("phone", e.target.value)}
+                      className="bg-white/10 border-white/20 text-white placeholder-gray-400"
+                      placeholder="+91 XXXXXXXXXX"
+                    />
                   </div>
                   <input type="text" name="botcheck" className="hidden" autoComplete="off" />
                   <div>
