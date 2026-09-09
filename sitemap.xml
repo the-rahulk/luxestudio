@@ -16,44 +16,76 @@
         </image:image>
     </url>
 
-    <!-- Services Section -->
+    <!-- Dedicated Works Archive -->
     <url>
-        <loc>https://theluxestudio.in/#services</loc>
-        <lastmod>2026-09-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Selected Work & Case Studies -->
-    <url>
-        <loc>https://theluxestudio.in/#work</loc>
+        <loc>https://theluxestudio.in/work.html</loc>
         <lastmod>2026-09-09</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.95</priority>
     </url>
 
-    <!-- Studio & Ethos -->
+    <!-- Case Studies & Deep Dives -->
     <url>
-        <loc>https://theluxestudio.in/#studio</loc>
+        <loc>https://theluxestudio.in/case-studies.html</loc>
         <lastmod>2026-09-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
     </url>
 
-    <!-- FAQ & Intel -->
+    <!-- Services & Engineering Capabilities -->
     <url>
-        <loc>https://theluxestudio.in/#faq</loc>
-        <lastmod>2026-09-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Contact & Project Inquiry -->
-    <url>
-        <loc>https://theluxestudio.in/#contact</loc>
+        <loc>https://theluxestudio.in/services.html</loc>
         <lastmod>2026-09-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+    </url>
+
+    <!-- Studio & Manifesto -->
+    <url>
+        <loc>https://theluxestudio.in/studio.html</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Contact & Discovery Studio -->
+    <url>
+        <loc>https://theluxestudio.in/contact.html</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Terms of Engagement -->
+    <url>
+        <loc>https://theluxestudio.in/terms.html</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Privacy & Data Ethics -->
+    <url>
+        <loc>https://theluxestudio.in/privacy.html</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Cookie & Telemetry Protocols -->
+    <url>
+        <loc>https://theluxestudio.in/cookies.html</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Universal Accessibility -->
+    <url>
+        <loc>https://theluxestudio.in/accessibility.html</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
     </url>
 
 </urlset>

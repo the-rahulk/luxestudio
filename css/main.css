@@ -3129,8 +3129,8 @@ body.loaded .hero-scroll {
     pointer-events: none;
 }
 
-/* â”€â”€ Content Hierarchy: Image first, Typography second, Metadata third â”€â”€ */
-.work-card-content {
+/* ── Content Hierarchy: Image first, Typography second, Metadata third ── */
+.work-card-horizontal .work-card-content {
     position: relative;
     z-index: 3;
     height: 100%;
@@ -4548,13 +4548,14 @@ body.loaded .hero-scroll {
 
 @media (max-width: 992px) {
 
-    /* â”€â”€ Dedicated Mobile Navbar: Exactly 2 Items â”€â”€ */
+    /* ── Dedicated Mobile Navbar: Exactly 2 Items ── */
     .nav {
         height: 68px;
         padding: 0 var(--pad);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        grid-template-columns: none !important;
         border-bottom: 1px solid rgba(17, 17, 17, 0.06);
     }
 
@@ -4567,6 +4568,15 @@ body.loaded .hero-scroll {
 
     .logo {
         font-size: 17px;
+        justify-self: auto;
+    }
+
+    .nav-right {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        margin-left: auto !important;
+        gap: 12px;
     }
 
     /* Strictly hide nav-links and the CTA/center pill on mobile */
@@ -4590,7 +4600,7 @@ body.loaded .hero-scroll {
         color: var(--ink);
         cursor: pointer;
         position: relative;
-        z-index: 2002;
+        z-index: 100001 !important;
         transition: background-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
             border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
             color 280ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -4718,9 +4728,15 @@ body.loaded .hero-scroll {
     transform: rotate(-45deg);
 }
 
-/* =========================================================
-   MOBILE FULL-SCREEN EDITORIAL MENU OVERLAY
-   ========================================================= */
+@media (min-width: 993px) {
+    .mobile-drawer,
+    .mobile-menu-drawer {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+}
 
 .mobile-menu-drawer {
     position: fixed;
@@ -6355,9 +6371,16 @@ body.loaded .hero-scroll {
     opacity: 0.9;
 }
 
+.faq-view-all {
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding-top: 24px;
+    margin-top: 8px;
+}
+
 .faq-accordion {
     display: flex;
     flex-direction: column;
+
 }
 
 .faq-item {

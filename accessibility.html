@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101010">
+
+    <title>Accessibility &amp; Universal Access — LuxeStudio</title>
+    <meta name="description"
+        content="Read LuxeStudio's commitment to digital accessibility, WCAG 2.2 standards, keyboard navigation, and inclusive creative engineering.">
+    <link rel="canonical" href="https://theluxestudio.in/accessibility.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css?v=20260909_v6">
+    <link rel="stylesheet" href="css/animations.css?v=20260909_v6">
+    <link rel="stylesheet" href="css/routes.css?v=20260909_v6">
+</head>
+
+<body class="loaded">
+
+    <!-- Skip Link for Screen Readers & Keyboard Users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Film Grain & Ambient Glow -->
+    <div class="film-grain" aria-hidden="true"></div>
+    <div class="ambient-mood-glow" aria-hidden="true"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true">
+        <div class="cursor-dot-inner"></div>
+    </div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true">
+        <div class="cursor-ring-inner">
+            <span class="cursor-arrow" id="cursorArrow" aria-hidden="true">&nearr;</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="nav" id="mainNav" role="banner">
+        <a href="index.html" class="logo magnetic" aria-label="LuxeStudio Home">
+            LUXE<span>STUDIO</span>
+            <span class="logo-dot"></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary Navigation">
+            <a href="services.html" class="nav-link magnetic">Services</a>
+            <a href="work.html" class="nav-link magnetic">Work</a>
+            <a href="case-studies.html" class="nav-link magnetic">Case Studies</a>
+            <a href="studio.html" class="nav-link magnetic">Studio</a>
+            <a href="contact.html" class="nav-link magnetic">Contact</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="contact.html" class="nav-cta-pill magnetic" aria-label="Start Your Project">
+                <span class="nav-pill-text">Start Your Project</span>
+                <span class="nav-pill-arrow" aria-hidden="true">&nearr;</span>
+            </a>
+            <button class="menu-toggle" id="menuToggleBtn" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="menu-toggle-icon hamburger" aria-hidden="true">
+                    <span class="hamburger-line line-top"></span>
+                    <span class="hamburger-line line-mid"></span>
+                    <span class="hamburger-line line-bot"></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileMenuDrawer" aria-hidden="true">
+        <div class="mobile-drawer-inner">
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="services.html" class="mobile-nav-link">Services</a>
+                <a href="work.html" class="mobile-nav-link">Work</a>
+                <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+                <a href="studio.html" class="mobile-nav-link">Studio</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+            </nav>
+            <div class="mobile-drawer-footer">
+                <a href="mailto:hello@theluxestudio.in" class="mobile-email">hello@theluxestudio.in</a>
+                <p class="mobile-copy">&copy; 2026 LuxeStudio Creative Technology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-wrap" id="main-content">
+        <!-- Hero Section -->
+        <section class="route-hero">
+            <div class="route-meta-strip">
+                <span class="route-meta-badge">
+                    <span class="badge-dot"></span>
+                    ACCESSIBILITY // 04.0
+                </span>
+                <span>WCAG 2.2 AA / AAA STANDARD</span>
+            </div>
+
+            <h1 class="route-title">
+                Universal Accessibility Statement
+            </h1>
+            <p class="route-lead">
+                Luxury design must never exclude. We engineer every interface to be seamlessly navigable, perceivable, and operable by all visitors across all devices and assistive tools.
+            </p>
+        </section>
+
+        <!-- 2-Column Legal Viewport with Sticky Index -->
+        <div class="legal-viewport">
+            <aside class="legal-sidebar" aria-label="Accessibility Statement Index">
+                <div class="legal-index-title">SECTION INDEX</div>
+                <nav class="legal-index-nav">
+                    <a href="#section-1" class="legal-index-link">01.0 Core Commitment</a>
+                    <a href="#section-2" class="legal-index-link">02.0 WCAG Standards</a>
+                    <a href="#section-3" class="legal-index-link">03.0 Technical Features</a>
+                    <a href="#section-4" class="legal-index-link">04.0 Reduced Motion</a>
+                    <a href="#section-5" class="legal-index-link">05.0 Feedback Channel</a>
+                </nav>
+            </aside>
+
+            <article class="legal-content-body">
+                
+                <!-- Section 01 -->
+                <section class="legal-section" id="section-1">
+                    <span class="legal-sec-num">SECTION 01.0</span>
+                    <h2>Commitment to Universal Access</h2>
+                    <p>
+                        LuxeStudio Creative Technology is committed to providing an inclusive digital environment. 
+                        We believe that high-end aesthetics, 3D WebGL, and fluid micro-animations must co-exist with rigorous accessibility engineering.
+                    </p>
+                </section>
+
+                <!-- Section 02 -->
+                <section class="legal-section" id="section-2">
+                    <span class="legal-sec-num">SECTION 02.0</span>
+                    <h2>WCAG 2.2 Conformance Standards</h2>
+                    <p>
+                        Our website and client applications are designed to comply with the Web Content Accessibility Guidelines (WCAG 2.2) Level AA, with several components achieving Level AAA conformance:
+                    </p>
+                    <ul>
+                        <li><strong>High Contrast Ratios:</strong> Text content meets or exceeds the 4.5:1 minimum contrast ratio against both light paper and dark obsidian backgrounds.</li>
+                        <li><strong>Clear Visual Hierarchy:</strong> Distinct font weights, sizing, and monospace indices maintain intuitive content structure.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 03 -->
+                <section class="legal-section" id="section-3">
+                    <span class="legal-sec-num">SECTION 03.0</span>
+                    <h2>Technical Accessibility Features</h2>
+                    <div class="legal-callout">
+                        <strong>Full Keyboard Operability:</strong> Every interactive element (navigation links, buttons, filter pills, discovery chips) can be navigated, focused, and triggered via keyboard alone.
+                    </div>
+                    <ul>
+                        <li>Visible focus indicators that conform to WCAG 2.2 non-text contrast requirements.</li>
+                        <li>ARIA landmarks, descriptive labels (`aria-label`, `aria-expanded`), and semantic HTML5 elements.</li>
+                        <li>Descriptive text alternatives for all informational media and project showcases.</li>
+                        <li>Bypass skip link allowing instant jumping to main page content.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 04 -->
+                <section class="legal-section" id="section-4">
+                    <span class="legal-sec-num">SECTION 04.0</span>
+                    <h2>Reduced-Motion &amp; Vestibular Support</h2>
+                    <p>
+                        We automatically honor your operating system's `prefers-reduced-motion: reduce` preference:
+                    </p>
+                    <ul>
+                        <li>GSAP scroll triggers and parallax transitions are automatically disabled.</li>
+                        <li>Dynamic preloader veil completes instantaneously without disorienting zooms.</li>
+                        <li>Custom cursor transforms into standard browser pointer physics.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 05 -->
+                <section class="legal-section" id="section-5">
+                    <span class="legal-sec-num">SECTION 05.0</span>
+                    <h2>Accessibility Feedback &amp; Assistance</h2>
+                    <p>
+                        We welcome feedback on the accessibility of LuxeStudio. If you encounter any barriers or have suggestions for improvement, please contact our team:
+                    </p>
+                    <p style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--accent); margin-top: 1rem;">
+                        ACCESSIBILITY LEAD // accessibility@theluxestudio.in &middot; hello@theluxestudio.in
+                    </p>
+                </section>
+
+            </article>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer footer-last-frame" id="footer" data-theme="dark" role="contentinfo">
+            <div class="footer-pulse-rail" id="footerPulseRail" aria-hidden="true">
+                <div class="footer-pulse-line"></div>
+                <div class="footer-pulse-point" id="footerPulsePoint"></div>
+            </div>
+
+            <div class="footer-frame-inner">
+                <div class="footer-statement-wrap">
+                    <span class="footer-statement">BUILT FOR WHAT'S NEXT.</span>
+                </div>
+
+                <div class="footer-signature-wrap" id="footerSignatureWrap">
+                    <div class="footer-signature-wordmark" id="footerWordmark" aria-label="LuxeStudio">
+                        <span class="sig-letter" data-letter="L">L</span><span class="sig-letter"
+                            data-letter="U">U</span><span class="sig-letter" data-letter="X">X</span><span
+                            class="sig-letter" data-letter="E">E</span><span class="sig-letter"
+                            data-letter="S">S</span><span class="sig-letter" data-letter="T">T</span><span
+                            data-letter="U" class="sig-letter">U</span><span class="sig-letter"
+                            data-letter="D">D</span><span class="sig-letter" data-letter="I">I</span><span
+                            class="sig-letter" data-letter="O">O</span>
+                    </div>
+                    <div class="footer-signature-sub">
+                        <span>CREATIVE TECHNOLOGY</span>
+                    </div>
+                </div>
+
+                <div class="footer-frame-divider" aria-hidden="true"></div>
+
+                <div class="footer-metadata-container">
+                    <div class="footer-meta-primary-row">
+                        <nav class="footer-meta-nav" aria-label="Footer Navigation">
+                            <a href="work.html" class="footer-meta-link">WORK</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="services.html" class="footer-meta-link">SERVICES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="case-studies.html" class="footer-meta-link">CASE STUDIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="studio.html" class="footer-meta-link">STUDIO</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="contact.html" class="footer-meta-link">CONTACT</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="faq.html" class="footer-meta-link">FAQ</a>
+                        </nav>
+
+                        <div class="footer-meta-contact">
+                            <a href="mailto:hello@theluxestudio.in" class="footer-contact-link">hello@theluxestudio.in</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-meta-legal-row">
+                        <span class="footer-copyright">&copy; 2026 LuxeStudio Creative Technology</span>
+                        <div class="footer-meta-nav">
+                            <a href="terms.html" class="footer-meta-link">TERMS</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="privacy.html" class="footer-meta-link">PRIVACY</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="cookies.html" class="footer-meta-link">COOKIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="accessibility.html" class="footer-meta-link is-active">ACCESSIBILITY</a>
+                        </div>
+                        <button type="button" class="back-to-top-btn" id="backToTopBtn"
+                            aria-label="Scroll back to top of page">
+                            <span class="btt-text">BACK TO TOP</span>
+                            <span class="btt-arrow" aria-hidden="true">&uarr;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/cursor.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
