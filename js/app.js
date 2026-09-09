@@ -3,6 +3,17 @@
  * Preloader, Global Studio Clock, Mobile Drawer, Clipboard, and Navigation
  */
 
+function getHashTarget() {
+    const hash = window.location.hash;
+    if (!hash || hash === '#') return null;
+    try {
+        const id = decodeURIComponent(hash.slice(1));
+        return document.getElementById(id);
+    } catch (e) {
+        return null;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // 0. Scroll handling: preserve hash navigation, otherwise start from top
     if (!window.location.hash) {
@@ -12,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0, 0);
     } else {
         setTimeout(() => {
-            const target = document.querySelector(window.location.hash);
+            const target = getHashTarget();
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
@@ -55,7 +66,7 @@ window.addEventListener('load', () => {
         window.scrollTo(0, 0);
     } else {
         setTimeout(() => {
-            const target = document.querySelector(window.location.hash);
+            const target = getHashTarget();
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
@@ -335,7 +346,13 @@ function initMobileDrawer() {
             const href = link.getAttribute('href');
             if (!href || href === '#' || !href.startsWith('#')) return;
 
-            const target = document.querySelector(href);
+            let target = null;
+            try {
+                const id = decodeURIComponent(href.slice(1));
+                target = document.getElementById(id) || document.querySelector(href);
+            } catch (err) {
+                target = null;
+            }
             if (!target) return;
 
             e.preventDefault();
@@ -406,7 +423,13 @@ function initSmoothAnchors() {
             const targetId = anchor.getAttribute('href');
             if (targetId === '#' || targetId === '') return;
 
-            const target = document.querySelector(targetId);
+            let target = null;
+            try {
+                const id = decodeURIComponent(targetId.slice(1));
+                target = document.getElementById(id) || document.querySelector(targetId);
+            } catch (err) {
+                target = null;
+            }
             if (!target) return;
 
             e.preventDefault();

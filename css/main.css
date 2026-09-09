@@ -4728,11 +4728,6 @@ body.loaded .hero-scroll {
     transform: rotate(-45deg);
 }
 
-/* Hide mobile drawers on desktop */
-.mobile-drawer {
-    display: none;
-}
-
 @media (min-width: 993px) {
     .mobile-drawer,
     .mobile-menu-drawer {
