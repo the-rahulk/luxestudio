@@ -208,7 +208,7 @@
         }
 
         .ct-cta-secondary:hover .ct-cta-label {
-            color: #F7F5F0;
+            color: var(--accent);
         }
 
         .ct-cta-secondary .ct-cta-arr {
@@ -779,10 +779,10 @@
             <div class="ct-form-panel" id="projectBrief">
                 <span class="ct-form-eyebrow">Project Brief</span>
                 <h3 class="ct-form-heading">Send us your brief.</h3>
-                <form action="https://formsubmit.co/rahulk19022@gmail.com" method="POST" id="contactForm" class="ct-form" novalidate>
+                <form action="https://formsubmit.co/hello@theluxestudio.in" method="POST" id="contactForm" class="ct-form" novalidate>
 
                     <!-- FormSubmit zero-backend delivery to primary and CC emails -->
-                    <input type="hidden" name="_cc" value="hello@theluxestudio.in">
+                    <input type="hidden" name="_cc" value="rahulk19022@gmail.com">
                     <input type="hidden" name="_subject" value="New Project Brief — LuxeStudio">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
@@ -991,7 +991,7 @@
                 const validChars = /^[a-zA-Z\u00C0-\u024F\u1E00-\u1EFF\s'’.\-]+$/.test(trimmed);
                 const letterCount = (trimmed.match(/[a-zA-Z\u00C0-\u024F\u1E00-\u1EFF]/g) || []).length;
                 if (!validChars || letterCount < 2) {
-                    return 'Please enter a valid full name (letters and spaces only).';
+                    return 'Please enter a valid full name (letters, spaces, and basic punctuation only).';
                 }
                 return '';
             }
@@ -1001,7 +1001,7 @@
                 if (!trimmed) return ''; // Optional
                 const digits = trimmed.replace(/\D/g, '');
                 const validChars = /^[+]?[0-9\s().-]{7,24}$/.test(trimmed);
-                if (!validChars || digits.length < 7 || digits.length > 16) {
+                if (!validChars || digits.length < 7 || digits.length > 15) {
                     return 'Please enter a valid phone number (7–15 digits, e.g. +91 99870 31290).';
                 }
                 return '';
