@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101010">
+
+    <title>Cookie &amp; Storage Protocols — LuxeStudio</title>
+    <meta name="description"
+        content="Learn how LuxeStudio utilizes strictly essential cookies and local storage tokens for interface performance and cursor preferences.">
+    <link rel="canonical" href="https://theluxestudio.in/cookies.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css?v=20260909_v6">
+    <link rel="stylesheet" href="css/animations.css?v=20260909_v6">
+    <link rel="stylesheet" href="css/routes.css?v=20260909_v6">
+</head>
+
+<body class="loaded">
+
+    <!-- Film Grain & Ambient Glow -->
+    <div class="film-grain" aria-hidden="true"></div>
+    <div class="ambient-mood-glow" aria-hidden="true"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true">
+        <div class="cursor-dot-inner"></div>
+    </div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true">
+        <div class="cursor-ring-inner">
+            <span class="cursor-arrow" id="cursorArrow" aria-hidden="true">&nearr;</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="nav" id="mainNav" role="banner">
+        <a href="index.html" class="logo magnetic" aria-label="LuxeStudio Home">
+            LUXE<span>STUDIO</span>
+            <span class="logo-dot"></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary Navigation">
+            <a href="services.html" class="nav-link magnetic">Services</a>
+            <a href="work.html" class="nav-link magnetic">Work</a>
+            <a href="case-studies.html" class="nav-link magnetic">Case Studies</a>
+            <a href="studio.html" class="nav-link magnetic">Studio</a>
+            <a href="contact.html" class="nav-link magnetic">Contact</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="contact.html" class="nav-cta-pill magnetic" aria-label="Start Your Project">
+                <span class="nav-pill-text">Start Your Project</span>
+                <span class="nav-pill-arrow" aria-hidden="true">&nearr;</span>
+            </a>
+            <button class="menu-toggle" id="menuToggleBtn" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="menu-toggle-icon hamburger" aria-hidden="true">
+                    <span class="hamburger-line line-top"></span>
+                    <span class="hamburger-line line-mid"></span>
+                    <span class="hamburger-line line-bot"></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileMenuDrawer" aria-hidden="true">
+        <div class="mobile-drawer-inner">
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="services.html" class="mobile-nav-link">Services</a>
+                <a href="work.html" class="mobile-nav-link">Work</a>
+                <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+                <a href="studio.html" class="mobile-nav-link">Studio</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+            </nav>
+            <div class="mobile-drawer-footer">
+                <a href="mailto:hello@theluxestudio.in" class="mobile-email">hello@theluxestudio.in</a>
+                <p class="mobile-copy">&copy; 2026 LuxeStudio Creative Technology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-wrap" id="main-content">
+        <!-- Hero Section -->
+        <section class="route-hero">
+            <div class="route-meta-strip">
+                <span class="route-meta-badge">
+                    <span class="badge-dot"></span>
+                    LEGAL // 03.0
+                </span>
+                <span>MINIMAL STORAGE ARCHITECTURE</span>
+            </div>
+
+            <h1 class="route-title">
+                Cookie &amp; Storage Protocols
+            </h1>
+            <p class="route-lead">
+                LuxeStudio operates on a zero-bloat standard. We use strictly functional, essential client-side storage keys to remember your interface preferences and preserve smooth animations.
+            </p>
+        </section>
+
+        <!-- 2-Column Legal Viewport with Sticky Index -->
+        <div class="legal-viewport">
+            <aside class="legal-sidebar" aria-label="Cookie Policy Index">
+                <div class="legal-index-title">SECTION INDEX</div>
+                <nav class="legal-index-nav">
+                    <a href="#section-1" class="legal-index-link">01.0 Storage Architecture</a>
+                    <a href="#section-2" class="legal-index-link">02.0 Essential Keys</a>
+                    <a href="#section-3" class="legal-index-link">03.0 Third-Party Trackers</a>
+                    <a href="#section-4" class="legal-index-link">04.0 Managing Preferences</a>
+                </nav>
+            </aside>
+
+            <article class="legal-content-body">
+                
+                <!-- Section 01 -->
+                <section class="legal-section" id="section-1">
+                    <span class="legal-sec-num">SECTION 01.0</span>
+                    <h2>Client-Side Storage Architecture</h2>
+                    <p>
+                        Cookies and browser local storage items are small data fragments saved on your device to ensure fluid navigation, preserve preloader dismiss states, and maintain your accessibility choices across sessions.
+                    </p>
+                </section>
+
+                <!-- Section 02 -->
+                <section class="legal-section" id="section-2">
+                    <span class="legal-sec-num">SECTION 02.0</span>
+                    <h2>Essential Technical Storage Keys</h2>
+                    <p>
+                        Our platform only sets cookies and local storage tokens that are strictly necessary for the site to render properly:
+                    </p>
+                    <ul>
+                        <li><strong>luxe_theme_pref:</strong> Stores your light/dark mode preference.</li>
+                        <li><strong>luxe_motion_reduced:</strong> Stores your OS accessibility preference for reduced motion.</li>
+                        <li><strong>luxe_session_token:</strong> Preserves CSRF form security during discovery submissions.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 03 -->
+                <section class="legal-section" id="section-3">
+                    <span class="legal-sec-num">SECTION 03.0</span>
+                    <h2>Zero Third-Party Advertising Trackers</h2>
+                    <div class="legal-callout">
+                        <strong>Clean Digital Hygiene:</strong> We do not load Facebook Pixels, TikTok Beacons, retargeting ad scripts, or behavioral profiling trackers on LuxeStudio.
+                    </div>
+                </section>
+
+                <!-- Section 04 -->
+                <section class="legal-section" id="section-4">
+                    <span class="legal-sec-num">SECTION 04.0</span>
+                    <h2>Managing Storage &amp; Cookie Preferences</h2>
+                    <p>
+                        You can clear or block cookies at any time via your browser settings (Chrome, Safari, Firefox, Edge). 
+                        Because LuxeStudio does not rely on invasive tracking cookies, disabling non-essential cookies will not degrade your core viewing experience.
+                    </p>
+                    <p style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--muted); margin-top: 2rem;">
+                        INQUIRIES // hello@theluxestudio.in
+                    </p>
+                </section>
+
+            </article>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer footer-last-frame" id="footer" data-theme="dark" role="contentinfo">
+            <div class="footer-pulse-rail" id="footerPulseRail" aria-hidden="true">
+                <div class="footer-pulse-line"></div>
+                <div class="footer-pulse-point" id="footerPulsePoint"></div>
+            </div>
+
+            <div class="footer-frame-inner">
+                <div class="footer-statement-wrap">
+                    <span class="footer-statement">BUILT FOR WHAT'S NEXT.</span>
+                </div>
+
+                <div class="footer-signature-wrap" id="footerSignatureWrap">
+                    <div class="footer-signature-wordmark" id="footerWordmark" aria-label="LuxeStudio">
+                        <span class="sig-letter" data-letter="L">L</span><span class="sig-letter"
+                            data-letter="U">U</span><span class="sig-letter" data-letter="X">X</span><span
+                            class="sig-letter" data-letter="E">E</span><span class="sig-letter"
+                            data-letter="S">S</span><span class="sig-letter" data-letter="T">T</span><span
+                            data-letter="U" class="sig-letter">U</span><span class="sig-letter"
+                            data-letter="D">D</span><span class="sig-letter" data-letter="I">I</span><span
+                            class="sig-letter" data-letter="O">O</span>
+                    </div>
+                    <div class="footer-signature-sub">
+                        <span>CREATIVE TECHNOLOGY</span>
+                    </div>
+                </div>
+
+                <div class="footer-frame-divider" aria-hidden="true"></div>
+
+                <div class="footer-metadata-container">
+                    <div class="footer-meta-primary-row">
+                        <nav class="footer-meta-nav" aria-label="Footer Navigation">
+                            <a href="work.html" class="footer-meta-link">WORK</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="services.html" class="footer-meta-link">SERVICES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="case-studies.html" class="footer-meta-link">CASE STUDIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="studio.html" class="footer-meta-link">STUDIO</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="contact.html" class="footer-meta-link">CONTACT</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="faq.html" class="footer-meta-link">FAQ</a>
+                        </nav>
+
+                        <div class="footer-meta-contact">
+                            <a href="mailto:hello@theluxestudio.in" class="footer-contact-link">hello@theluxestudio.in</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-meta-legal-row">
+                        <span class="footer-copyright">&copy; 2026 LuxeStudio Creative Technology</span>
+                        <div class="footer-meta-nav">
+                            <a href="terms.html" class="footer-meta-link">TERMS</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="privacy.html" class="footer-meta-link">PRIVACY</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="cookies.html" class="footer-meta-link is-active">COOKIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="accessibility.html" class="footer-meta-link">ACCESSIBILITY</a>
+                        </div>
+                        <button type="button" class="back-to-top-btn" id="backToTopBtn"
+                            aria-label="Scroll back to top of page">
+                            <span class="btt-text">BACK TO TOP</span>
+                            <span class="btt-arrow" aria-hidden="true">&uarr;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/cursor.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

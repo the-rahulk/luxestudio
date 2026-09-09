@@ -4,11 +4,20 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Disable automatic scroll restoration and start from top
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
+    // 0. Scroll handling: preserve hash navigation, otherwise start from top
+    if (!window.location.hash) {
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+    } else {
+        setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 220);
     }
-    window.scrollTo(0, 0);
 
     // 1. Initialize Motion Engine
     if (typeof initMotionEngine === 'function') {
@@ -35,14 +44,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 8. Work Archive Drawer (10 Real Projects)
     initWorkArchiveDrawer();
+
+    // 9. Back To Top Button
+    initBackToTop();
 });
 
-// Ensure top position on window load and beforeunload
+// Ensure top position on window load only when no hash is present
 window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
+    if (!window.location.hash) {
+        window.scrollTo(0, 0);
+    } else {
+        setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 120);
+    }
 });
 window.addEventListener('beforeunload', () => {
-    window.scrollTo(0, 0);
+    if (!window.location.hash) {
+        window.scrollTo(0, 0);
+    }
 });
 
 /* =========================================================
@@ -59,7 +82,9 @@ function initPreloader() {
     if (!loader || !wordmark || !line || !paperVeil) {
         document.documentElement.classList.remove('is-loading');
         document.body.classList.add('loaded');
-        window.scrollTo(0, 0);
+        if (!window.location.hash) {
+            window.scrollTo(0, 0);
+        }
         return;
     }
 
@@ -73,10 +98,12 @@ function initPreloader() {
         document.documentElement.classList.remove('is-loading');
         document.body.classList.add('loaded');
 
-        // Ensure user starts cleanly at top of Hero
-        window.scrollTo(0, 0);
-        if (typeof lenisInstance !== 'undefined' && lenisInstance) {
-            lenisInstance.scrollTo(0, { immediate: true });
+        // Ensure user starts cleanly at top of Hero only if no hash is requested
+        if (!window.location.hash) {
+            window.scrollTo(0, 0);
+            if (typeof lenisInstance !== 'undefined' && lenisInstance) {
+                lenisInstance.scrollTo(0, { immediate: true });
+            }
         }
         if (typeof ScrollTrigger !== 'undefined') {
             ScrollTrigger.refresh();
@@ -490,5 +517,26 @@ function initWorkArchiveDrawer() {
                 }
             });
         });
+    });
+}
+
+/* =========================================================
+   BACK TO TOP GLOBAL HANDLER
+   ========================================================= */
+function initBackToTop() {
+    const bttBtn = document.getElementById('backToTopBtn');
+    if (!bttBtn) return;
+
+    bttBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const activeLenis = window.lenisInstance || (typeof lenisInstance !== 'undefined' ? lenisInstance : null);
+        if (activeLenis && typeof activeLenis.scrollTo === 'function') {
+            activeLenis.scrollTo(0, {
+                duration: 1.1,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+            });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     });
 }

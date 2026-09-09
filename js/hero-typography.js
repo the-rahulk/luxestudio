@@ -69,10 +69,13 @@
        2. CANVAS SIZING (retina-safe, strictly scoped to stage)
        ========================================================= */
 
+    let padX = 40;
+    let padY = 44;
+
     function sizeCanvas() {
         const isMobile = window.innerWidth <= 768;
-        const padX   = isMobile ? 16 : 40;
-        const padY   = isMobile ? 20 : 44;
+        padX   = isMobile ? 16 : 40;
+        padY   = isMobile ? 20 : 44;
         const dpr    = Math.min(window.devicePixelRatio || 1, 2.5);
         const sw     = wordStage.offsetWidth  || 200;
         const sh     = wordStage.offsetHeight || 80;
@@ -144,8 +147,8 @@
      */
     function spawnLetterAsh(letterRect, count, mode, letterProgress) {
         const stageRect = wordStage.getBoundingClientRect();
-        const relX = letterRect.left - stageRect.left + PAD_X;
-        const relY = letterRect.top - stageRect.top + PAD_Y;
+        const relX = letterRect.left - stageRect.left + padX;
+        const relY = letterRect.top - stageRect.top + padY;
         const w    = Math.max(letterRect.width, 10);
         const h    = Math.max(letterRect.height, 20);
         const isMobile = window.innerWidth <= 768;
@@ -345,6 +348,7 @@
         const pauseStartMs   = totalErodeMs + 20;
         const pauseDuration  = 160;
         const newWordStartMs = pauseStartMs + pauseDuration;
+        const totalFormMs    = 880;
 
         setTimeout(() => {
             // Signal diagram to activate next concept quietly
@@ -357,7 +361,6 @@
         setTimeout(() => {
             const newLetterEls = renderLetters(toWord);
             const numNew = newLetterEls.length;
-            const totalFormMs = 880;
             const letterFormDur = 540;
             const stepDelayNew = numNew > 1 ? (totalFormMs - letterFormDur) / (numNew - 1) : 0;
 

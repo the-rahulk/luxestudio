@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101010">
+
+    <title>Frequently Asked Questions — LuxeStudio Creative Technology</title>
+    <meta name="description"
+        content="Everything you need to know before we build together. Straight answers on what LuxeStudio builds, how projects begin, timelines, pricing, automation, and more.">
+    <link rel="canonical" href="https://theluxestudio.in/faq.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css?v=20260909_v8">
+    <link rel="stylesheet" href="css/animations.css?v=20260909_v8">
+    <link rel="stylesheet" href="css/routes.css?v=20260909_v8">
+    <style>
+        /* Scoped FAQ Light Theme Guarantee */
+        .faq-item {
+            border-bottom: 1px solid rgba(17, 17, 17, 0.12) !important;
+        }
+        .faq-item[open] {
+            border-bottom-color: var(--accent) !important;
+        }
+        .faq-question {
+            color: #111111 !important;
+            font-weight: 600 !important;
+        }
+        .faq-item:hover .faq-question,
+        .faq-item[open] .faq-question {
+            color: #000000 !important;
+        }
+        .faq-content p {
+            color: #2b2b2b !important;
+            font-size: 1rem !important;
+            line-height: 1.7 !important;
+        }
+        .faq-content p + p {
+            margin-top: 14px !important;
+        }
+        @media (max-width: 640px) {
+            .faq-trigger {
+                padding: 16px 0 !important;
+                gap: 12px !important;
+            }
+            .faq-content {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                padding-bottom: 20px !important;
+            }
+            .faq-question {
+                font-size: 1.0625rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="loaded">
+
+    <!-- Film Grain & Ambient Glow -->
+    <div class="film-grain" aria-hidden="true"></div>
+    <div class="ambient-mood-glow" aria-hidden="true"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true">
+        <div class="cursor-dot-inner"></div>
+    </div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true">
+        <div class="cursor-ring-inner">
+            <span class="cursor-arrow" id="cursorArrow" aria-hidden="true">&nearr;</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="nav" id="mainNav" role="banner">
+        <a href="index.html" class="logo magnetic" aria-label="LuxeStudio Home">
+            LUXE<span>STUDIO</span>
+            <span class="logo-dot"></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary Navigation">
+            <a href="services.html" class="nav-link magnetic">Services</a>
+            <a href="work.html" class="nav-link magnetic">Work</a>
+            <a href="case-studies.html" class="nav-link magnetic">Case Studies</a>
+            <a href="studio.html" class="nav-link magnetic">Studio</a>
+            <a href="contact.html" class="nav-link magnetic">Contact</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="contact.html" class="nav-cta-pill magnetic" aria-label="Start Your Project">
+                <span class="nav-pill-text">Start Your Project</span>
+                <span class="nav-pill-arrow" aria-hidden="true">&nearr;</span>
+            </a>
+            <button class="menu-toggle" id="menuToggleBtn" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="menu-toggle-icon hamburger" aria-hidden="true">
+                    <span class="hamburger-line line-top"></span>
+                    <span class="hamburger-line line-mid"></span>
+                    <span class="hamburger-line line-bot"></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileMenuDrawer" aria-hidden="true">
+        <div class="mobile-drawer-inner">
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="services.html" class="mobile-nav-link">Services</a>
+                <a href="work.html" class="mobile-nav-link">Work</a>
+                <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+                <a href="studio.html" class="mobile-nav-link">Studio</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <a href="faq.html" class="mobile-nav-link is-active">FAQ</a>
+            </nav>
+            <div class="mobile-drawer-footer">
+                <a href="mailto:hello@theluxestudio.in" class="mobile-email">hello@theluxestudio.in</a>
+                <p class="mobile-copy">&copy; 2026 LuxeStudio Creative Technology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-wrap" id="main-content">
+
+        <!-- Route Hero -->
+        <section class="route-hero">
+            <div class="route-meta-strip">
+                <span class="route-meta-badge">
+                    <span class="badge-dot"></span>
+                    FAQ / BEFORE WE BUILD
+                </span>
+                <span>STRAIGHT ANSWERS</span>
+            </div>
+
+            <h1 class="route-title">
+                Everything you need<br>to know before we begin.
+            </h1>
+            <p class="route-lead">
+                Clear answers on what we build, how projects start, timelines, costs, automation, and what working with LuxeStudio actually looks like.
+            </p>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section style="padding: clamp(32px, 5vw, 64px) var(--pad) clamp(64px, 8vw, 96px); max-width: 900px; margin: 0 auto; width: 100%;">
+
+            <div class="faq-accordion-group" id="faqPageAccordion" style="display: flex; flex-direction: column;">
+
+                <!-- 01 -->
+                <details class="faq-item" open>
+                    <summary class="faq-trigger">
+                        <span class="faq-num">01</span>
+                        <span class="faq-question">What does LuxeStudio actually build?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>We design and build digital experiences, websites, custom software, automated workflows, integrations, and digital systems.</p>
+                        <p>Some projects start with a website. Others start with a business problem, a manual process, or a system that has stopped scaling. We work from the problem backward and build what actually needs to exist.</p>
+                    </div>
+                </details>
+
+                <!-- 02 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">02</span>
+                        <span class="faq-question">Do you only build websites?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>No.</p>
+                        <p>Websites are one part of what we do. We also build custom digital experiences, internal tools, workflow systems, automations, integrations, and bespoke development.</p>
+                        <p>If something repetitive, disconnected, or unnecessarily complicated is slowing the business down, there's usually a better way to build it.</p>
+                    </div>
+                </details>
+
+                <!-- 03 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">03</span>
+                        <span class="faq-question">Can you work with our existing website or system?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Yes.</p>
+                        <p>You don't always need to start from zero. We can work with an existing website, application, API, CMS, database, or workflow — whether that means improving what's already there, connecting disconnected systems, or rebuilding a part that has outgrown its original architecture.</p>
+                    </div>
+                </details>
+
+                <!-- 04 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">04</span>
+                        <span class="faq-question">How does a project with LuxeStudio begin?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>With a conversation.</p>
+                        <p>You tell us what you're trying to achieve, what's currently getting in the way, and what you want to change. We look at the problem, understand the requirements, and determine what should actually be built before jumping into design or development.</p>
+                        <p>No unnecessary solution is prescribed before the problem is understood.</p>
+                    </div>
+                </details>
+
+                <!-- 05 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">05</span>
+                        <span class="faq-question">How long does a project take?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>It depends on what we're building.</p>
+                        <p>A focused website and a custom digital system have very different timelines. Once we understand the scope, we'll outline the major phases, dependencies, and expected timeline before development begins.</p>
+                        <p>We'd rather give you a realistic timeline than an impressive one.</p>
+                    </div>
+                </details>
+
+                <!-- 06 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">06</span>
+                        <span class="faq-question">How much does a project cost?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>There isn't one fixed LuxeStudio price because there isn't one fixed type of project.</p>
+                        <p>Cost depends on scope, complexity, integrations, functionality, content, and the level of custom development involved. After understanding the project, we'll provide a clear scope and estimate before work begins.</p>
+                    </div>
+                </details>
+
+                <!-- 07 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">07</span>
+                        <span class="faq-question">Do you work with businesses outside India?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Yes.</p>
+                        <p>Digital products don't need to be built in the same room — or the same country. We can work remotely with businesses and teams across different locations using structured communication, shared documentation, and collaborative tools.</p>
+                    </div>
+                </details>
+
+                <!-- 08 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">08</span>
+                        <span class="faq-question">Can you automate processes we currently do manually?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Yes.</p>
+                        <p>We can map an existing workflow, identify repetitive steps, connect the systems involved, and automate the parts that shouldn't require constant human effort.</p>
+                        <p>The goal isn't to automate everything. It's to remove the work that doesn't need to be done manually.</p>
+                    </div>
+                </details>
+
+                <!-- 09 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">09</span>
+                        <span class="faq-question">Can LuxeStudio connect different tools and platforms?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Yes.</p>
+                        <p>Where APIs, webhooks, integrations, or other supported methods are available, we can connect the systems your business already uses. For example:</p>
+                        <ul style="margin: 10px 0 0 0; padding-left: 1.25em; display: flex; flex-direction: column; gap: 4px; color: var(--ink-light); font-size: 0.9375rem;">
+                            <li>CRM &rarr; Website</li>
+                            <li>Forms &rarr; Database</li>
+                            <li>Website &rarr; Internal tools</li>
+                            <li>Payments &rarr; Operations</li>
+                            <li>Multiple platforms &rarr; One workflow</li>
+                        </ul>
+                        <p style="margin-top: 12px;">The exact approach depends on the systems involved.</p>
+                    </div>
+                </details>
+
+                <!-- 10 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">10</span>
+                        <span class="faq-question">Will I be involved during the project?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Yes — but you won't need to manage the project yourself.</p>
+                        <p>We keep communication focused around important decisions, feedback, milestones, and approvals. Our job is to handle the complexity while keeping you close enough to know exactly where things stand.</p>
+                    </div>
+                </details>
+
+                <!-- 11 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">11</span>
+                        <span class="faq-question">What happens if I already have a design?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>That's completely fine.</p>
+                        <p>We can work from an existing design system, improve an existing direction, or take responsibility for the entire process from strategy and design through development. The right level of involvement depends on what the project needs.</p>
+                    </div>
+                </details>
+
+                <!-- 12 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">12</span>
+                        <span class="faq-question">Do you provide ongoing support after launch?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Yes, when the project requires it.</p>
+                        <p>Depending on the engagement, we can continue with maintenance, improvements, new functionality, technical support, or further development after launch. A launch doesn't necessarily have to be the end of the relationship.</p>
+                    </div>
+                </details>
+
+                <!-- 13 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">13</span>
+                        <span class="faq-question">Who owns the website and code after the project?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>The ownership and handover terms are defined as part of the project agreement.</p>
+                        <p>Our aim is to leave you with a usable, maintainable product and the appropriate project assets and access agreed upon for the engagement.</p>
+                    </div>
+                </details>
+
+                <!-- 14 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">14</span>
+                        <span class="faq-question">What do you need from us to get started?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Usually, a clear understanding of:</p>
+                        <ul style="margin: 10px 0 12px 0; padding-left: 1.25em; display: flex; flex-direction: column; gap: 4px; color: var(--ink-light); font-size: 0.9375rem;">
+                            <li>What you're trying to achieve</li>
+                            <li>What's currently not working</li>
+                            <li>Who the product is for</li>
+                            <li>Existing systems or tools involved</li>
+                            <li>Important requirements or constraints</li>
+                            <li>Your desired timeline</li>
+                        </ul>
+                        <p>You don't need to have everything figured out before contacting us. That's part of what the first conversation is for.</p>
+                    </div>
+                </details>
+
+                <!-- 15 -->
+                <details class="faq-item">
+                    <summary class="faq-trigger">
+                        <span class="faq-num">15</span>
+                        <span class="faq-question">What if I'm not sure exactly what I need?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>That's okay.</p>
+                        <p>You don't need to arrive with a technical specification. Tell us what you're trying to accomplish, what's frustrating you, or where you think there's an opportunity.</p>
+                        <p>We'll help turn that into something concrete.</p>
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- Start a Conversation CTA -->
+            <div style="margin-top: 4rem; padding: clamp(28px, 4vw, 44px); background: var(--bg-alt); border: 1px solid var(--line); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;">
+                <div>
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 6px;">
+                        STILL HAVE QUESTIONS?
+                    </span>
+                    <h3 style="font-size: clamp(1.25rem, 2vw, 1.625rem); font-weight: 700; margin: 0 0 6px;">
+                        Let's discuss your project directly.
+                    </h3>
+                    <p style="color: var(--ink-light); font-size: 0.9375rem; margin: 0; line-height: 1.55;">
+                        We review every inquiry directly and respond within 24 hours.
+                    </p>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0;">
+                    <a href="contact.html" class="nav-cta-pill magnetic" style="display: inline-flex;">
+                        <span class="nav-pill-text">Start a Conversation</span>
+                        <span class="nav-pill-arrow" aria-hidden="true">&nearr;</span>
+                    </a>
+                    <a href="https://calendly.com/the-luxestudio/project-discovery" target="_blank" rel="noopener noreferrer"
+                        class="btn-card-action btn-live-site">
+                        <span>Book a Call</span>
+                        <span aria-hidden="true">&nearr;</span>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer footer-last-frame" id="footer" data-theme="dark" role="contentinfo">
+            <div class="footer-pulse-rail" id="footerPulseRail" aria-hidden="true">
+                <div class="footer-pulse-line"></div>
+                <div class="footer-pulse-point" id="footerPulsePoint"></div>
+            </div>
+
+            <div class="footer-frame-inner">
+                <div class="footer-statement-wrap">
+                    <span class="footer-statement">BUILT FOR WHAT'S NEXT.</span>
+                </div>
+
+                <div class="footer-signature-wrap" id="footerSignatureWrap">
+                    <div class="footer-signature-wordmark" id="footerWordmark" aria-label="LuxeStudio">
+                        <span class="sig-letter" data-letter="L">L</span><span class="sig-letter"
+                            data-letter="U">U</span><span class="sig-letter" data-letter="X">X</span><span
+                            class="sig-letter" data-letter="E">E</span><span class="sig-letter"
+                            data-letter="S">S</span><span class="sig-letter" data-letter="T">T</span><span
+                            data-letter="U" class="sig-letter">U</span><span class="sig-letter"
+                            data-letter="D">D</span><span class="sig-letter" data-letter="I">I</span><span
+                            class="sig-letter" data-letter="O">O</span>
+                    </div>
+                    <div class="footer-signature-sub">
+                        <span>CREATIVE TECHNOLOGY</span>
+                    </div>
+                </div>
+
+                <div class="footer-frame-divider" aria-hidden="true"></div>
+
+                <div class="footer-metadata-container">
+                    <div class="footer-meta-primary-row">
+                        <nav class="footer-meta-nav" aria-label="Footer Navigation">
+                            <a href="work.html" class="footer-meta-link">WORK</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="services.html" class="footer-meta-link">SERVICES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="case-studies.html" class="footer-meta-link">CASE STUDIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="studio.html" class="footer-meta-link">STUDIO</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="contact.html" class="footer-meta-link">CONTACT</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="faq.html" class="footer-meta-link is-active">FAQ</a>
+                        </nav>
+
+                        <div class="footer-meta-contact">
+                            <a href="mailto:hello@theluxestudio.in" class="footer-contact-link">hello@theluxestudio.in</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-meta-legal-row">
+                        <span class="footer-copyright">&copy; 2026 LuxeStudio Creative Technology</span>
+                        <div class="footer-meta-nav">
+                            <a href="terms.html" class="footer-meta-link">TERMS</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="privacy.html" class="footer-meta-link">PRIVACY</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="cookies.html" class="footer-meta-link">COOKIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="accessibility.html" class="footer-meta-link">ACCESSIBILITY</a>
+                        </div>
+                        <button type="button" class="back-to-top-btn" id="backToTopBtn"
+                            aria-label="Scroll back to top of page">
+                            <span class="btt-text">BACK TO TOP</span>
+                            <span class="btt-arrow" aria-hidden="true">&uarr;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/cursor.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Exclusive Accordion: one open at a time -->
+    <script>
+        (function () {
+            const acc = document.getElementById('faqPageAccordion');
+            if (!acc) return;
+            acc.addEventListener('click', function (e) {
+                const summary = e.target.closest('summary.faq-trigger');
+                if (!summary) return;
+                const clicked = summary.closest('details.faq-item');
+                if (!clicked) return;
+                requestAnimationFrame(function () {
+                    acc.querySelectorAll('details.faq-item').forEach(function (item) {
+                        if (item !== clicked && item.open) {
+                            item.removeAttribute('open');
+                        }
+                    });
+                });
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

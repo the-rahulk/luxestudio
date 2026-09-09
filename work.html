@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101010">
+
+    <title>Selected Work &amp; Portfolio Archive — LuxeStudio Creative Technology</title>
+    <meta name="description"
+        content="Explore LuxeStudio's selected portfolio of bespoke websites, web applications, 3D interactive experiences, and digital platforms.">
+    <link rel="canonical" href="https://theluxestudio.in/work.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css?v=20260909_v6">
+    <link rel="stylesheet" href="css/animations.css?v=20260909_v6">
+    <link rel="stylesheet" href="css/routes.css?v=20260909_v6">
+</head>
+
+<body class="loaded">
+
+    <!-- Film Grain & Ambient Glow -->
+    <div class="film-grain" aria-hidden="true"></div>
+    <div class="ambient-mood-glow" aria-hidden="true"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true">
+        <div class="cursor-dot-inner"></div>
+    </div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true">
+        <div class="cursor-ring-inner">
+            <span class="cursor-arrow" id="cursorArrow" aria-hidden="true">&nearr;</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="nav" id="mainNav" role="banner">
+        <a href="index.html" class="logo magnetic" aria-label="LuxeStudio Home">
+            LUXE<span>STUDIO</span>
+            <span class="logo-dot"></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary Navigation">
+            <a href="services.html" class="nav-link magnetic">Services</a>
+            <a href="work.html" class="nav-link is-active magnetic">Work</a>
+            <a href="case-studies.html" class="nav-link magnetic">Case Studies</a>
+            <a href="studio.html" class="nav-link magnetic">Studio</a>
+            <a href="contact.html" class="nav-link magnetic">Contact</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="contact.html" class="nav-cta-pill magnetic" aria-label="Start Your Project">
+                <span class="nav-pill-text">Start Your Project</span>
+                <span class="nav-pill-arrow" aria-hidden="true">&nearr;</span>
+            </a>
+            <button class="menu-toggle" id="menuToggleBtn" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="menu-toggle-icon hamburger" aria-hidden="true">
+                    <span class="hamburger-line line-top"></span>
+                    <span class="hamburger-line line-mid"></span>
+                    <span class="hamburger-line line-bot"></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileMenuDrawer" aria-hidden="true">
+        <div class="mobile-drawer-inner">
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="services.html" class="mobile-nav-link">Services</a>
+                <a href="work.html" class="mobile-nav-link is-active">Work</a>
+                <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+                <a href="studio.html" class="mobile-nav-link">Studio</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+            </nav>
+            <div class="mobile-drawer-footer">
+                <a href="mailto:hello@theluxestudio.in" class="mobile-email">hello@theluxestudio.in</a>
+                <p class="mobile-copy">&copy; 2026 LuxeStudio Creative Technology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-wrap" id="main-content">
+        <!-- Hero Section -->
+        <section class="route-hero">
+            <div class="route-meta-strip">
+                <span class="route-meta-badge">
+                    <span class="badge-dot"></span>
+                    03 / SELECTED WORKS
+                </span>
+                <span>CURATED ARCHIVE // 12 FLAGSHIP BUILDS</span>
+            </div>
+
+            <h1 class="route-title">
+                Digital artifacts that define brand prestige.
+            </h1>
+            <p class="route-lead">
+                Every build is engineered from first principles — zero templates, custom motion choreographies, sub-second latency, and ruthless attention to typographic detail. Choose to read our in-depth case study or explore the live production build.
+            </p>
+        </section>
+
+        <!-- Work Filter Tabs -->
+        <nav class="work-filter-bar" aria-label="Filter works by discipline">
+            <button type="button" class="work-filter-btn is-active" data-filter="all">All Works (12)</button>
+            <button type="button" class="work-filter-btn" data-filter="luxury">Fashion &amp; Luxury</button>
+            <button type="button" class="work-filter-btn" data-filter="spatial">Spatial &amp; Architecture</button>
+            <button type="button" class="work-filter-btn" data-filter="health">Health &amp; Performance</button>
+            <button type="button" class="work-filter-btn" data-filter="academy">Education &amp; Academies</button>
+        </nav>
+
+        <!-- Project Grid -->
+        <section class="work-grid-container" id="workGrid">
+            
+            <!-- Project 01: Auri Concept -->
+            <div class="work-card project-card-filter" data-category="spatial">
+                <div class="work-card-media">
+                    <img src="assets/projects/auri-concept.jpg" alt="Auri Concept Architectural Lighting" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">Auri Concept</h2>
+                            <span class="work-card-discipline">Architectural Lighting</span>
+                        </div>
+                        <p class="work-card-desc">
+                            Interactive luminaire showcase and architectural specification portal with 60fps lighting simulation physics.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">Next.js</span>
+                            <span class="work-card-tag">GLSL Shaders</span>
+                            <span class="work-card-tag">Product Catalog</span>
+                            <span class="work-card-tag">60 FPS</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#auri-concept" class="btn-card-action btn-case-study">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="https://www.auriconcept.com/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-live-site">
+                            <span>Visit Site</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 03: Luxxe Labels -->
+            <div class="work-card project-card-filter" data-category="luxury">
+                <div class="work-card-media">
+                    <img src="assets/projects/luxxe-labels.jpg" alt="Luxxe Labels Luxury Fashion" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">Luxxe Labels</h2>
+                            <span class="work-card-discipline">Luxury E-Commerce</span>
+                        </div>
+                        <p class="work-card-desc">
+                            Editorial fashion shopping portal engineered for seamless collection storytelling, fast lookbook filtering, and elevated checkout.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">Headless</span>
+                            <span class="work-card-tag">Next.js</span>
+                            <span class="work-card-tag">Micro-Cart</span>
+                            <span class="work-card-tag">+185% Sales</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#luxxe-labels" class="btn-card-action btn-case-study">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="https://www.luxelabels.co.in/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-live-site">
+                            <span>Visit Site</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 04: Virats BuildTech -->
+            <div class="work-card project-card-filter" data-category="spatial">
+                <div class="work-card-media">
+                    <img src="assets/projects/virats-buildtech.jpg" alt="Virats BuildTech Civil Infrastructure" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">Virats BuildTech</h2>
+                            <span class="work-card-discipline">Civil Infrastructure</span>
+                        </div>
+                        <p class="work-card-desc">
+                            Corporate engineering website featuring an interactive 3D blueprint canvas, live project progress tracking, and institutional prestige.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">Three.js</span>
+                            <span class="work-card-tag">Vector Canvas</span>
+                            <span class="work-card-tag">100% Vitals</span>
+                            <span class="work-card-tag">+280% RFPs</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#virats-buildtech" class="btn-card-action btn-case-study">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="https://luxestudio-live.github.io/virats-buildtech/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-live-site">
+                            <span>Visit Site</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 05: Cory Ryan Photography -->
+            <div class="work-card project-card-filter" data-category="luxury">
+                <div class="work-card-media">
+                    <img src="assets/projects/cory-ryan.jpg" alt="Cory Ryan Editorial Photography" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">Cory Ryan</h2>
+                            <span class="work-card-discipline">Editorial &amp; Weddings</span>
+                        </div>
+                        <p class="work-card-desc">
+                            High-contrast gallery experience capturing Texas Hill Country love stories, high-fashion editorials, and commercial studio shoots.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">AVIF Stream</span>
+                            <span class="work-card-tag">0.32s Load</span>
+                            <span class="work-card-tag">Mood Glow</span>
+                            <span class="work-card-tag">Full Booking</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#cory-ryan" class="btn-card-action btn-case-study">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="https://coryryan.theluxestudio.in/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-live-site">
+                            <span>Visit Site</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 06: The Face Craft Studio -->
+            <div class="work-card project-card-filter" data-category="luxury">
+                <div class="work-card-media">
+                    <img src="assets/projects/the-face-craft-studio.jpg" alt="The Face Craft Studio Cinema & Media" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">The Face Craft Studio</h2>
+                            <span class="work-card-discipline">Cinema &amp; Production</span>
+                        </div>
+                        <p class="work-card-desc">
+                            High-impact commercial photography, campaign video production showcase, and talent booking platform with dark cinematic atmosphere.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">HLS Video</span>
+                            <span class="work-card-tag">Film Grain</span>
+                            <span class="work-card-tag">0.5s Stream</span>
+                            <span class="work-card-tag">+240% Deals</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#the-face-craft-studio" class="btn-card-action btn-case-study">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="https://luxestudio-live.github.io/r3-studio/pages/homepage.html" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-live-site">
+                            <span>Visit Site</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 07: Power Gold Gym -->
+            <div class="work-card project-card-filter" data-category="health">
+                <div class="work-card-media">
+                    <img src="assets/projects/power-gold-gym.jpg" alt="Power Gold Gym Performance Fitness" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">Power Gold Gym</h2>
+                            <span class="work-card-discipline">Performance Fitness</span>
+                        </div>
+                        <p class="work-card-desc">
+                            High-energy membership portal, workout schedule manager, and automated athlete lead intake system with bold kinetic typography.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">Brutalist UI</span>
+                            <span class="work-card-tag">WhatsApp API</span>
+                            <span class="work-card-tag">0.28s Load</span>
+                            <span class="work-card-tag">+420% Leads</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#power-gold-gym" class="btn-card-action btn-case-study">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="https://luxestudio-live.github.io/power-gold-gym/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-live-site">
+                            <span>Visit Site</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 08: Vedant Hospital -->
+            <div class="work-card project-card-filter" data-category="health">
+                <div class="work-card-media">
+                    <img src="assets/projects/vedant-hospital.jpg" alt="Vedant Hospital Healthcare" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">Vedant Hospital</h2>
+                            <span class="work-card-discipline">Multi-Speciality Healthcare</span>
+                        </div>
+                        <p class="work-card-desc">
+                            Patient-first hospital portal featuring instantaneous doctor discovery, department triage, and streamlined appointment bookings.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">100 A11y</span>
+                            <span class="work-card-tag">Doctor Filter</span>
+                            <span class="work-card-tag">DPDP Compliant</span>
+                            <span class="work-card-tag">+390% Bookings</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#vedant-hospital" class="btn-card-action btn-case-study">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="https://luxestudio-live.github.io/vedant-hospital/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-live-site">
+                            <span>Visit Site</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 09: Gravity Private Tutorials -->
+            <div class="work-card project-card-filter" data-category="academy">
+                <div class="work-card-media">
+                    <img src="assets/projects/gravity-tutorials.jpg" alt="Gravity Private Tutorials" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">Gravity Tutorials</h2>
+                            <span class="work-card-discipline">Academic Coaching</span>
+                        </div>
+                        <p class="work-card-desc">
+                            Comprehensive curriculum catalog, student achievements showcase, and admissions portal for competitive exam preparations.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">Stream Matrix</span>
+                            <span class="work-card-tag">99 Score</span>
+                            <span class="work-card-tag">Exam Roadmaps</span>
+                            <span class="work-card-tag">+290% Enrollments</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#gravity-tutorials" class="btn-card-action btn-case-study">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="https://www.gravityprivatetutorials.com/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-live-site">
+                            <span>Visit Site</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 10: Gurukul Study Center -->
+            <div class="work-card project-card-filter" data-category="academy">
+                <div class="work-card-media">
+                    <img src="assets/projects/gurukul-study-center.jpg" alt="Gurukul Study Center" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">Gurukul Study Center</h2>
+                            <span class="work-card-discipline">Educational Institute</span>
+                        </div>
+                        <p class="work-card-desc">
+                            Digital knowledge hub, faculty profiles, and automated parent inquiry pipelines engineered for maximum clarity and speed.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">0.30s FCP</span>
+                            <span class="work-card-tag">Parent Portal</span>
+                            <span class="work-card-tag">SEO 100%</span>
+                            <span class="work-card-tag">+315% Calls</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#gurukul-study-center" class="btn-card-action btn-case-study">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="https://gurukulstudycenter.in/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-live-site">
+                            <span>Visit Site</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 11: Yogi's Yoga -->
+            <div class="work-card project-card-filter" data-category="health">
+                <div class="work-card-media">
+                    <img src="assets/projects/yogis-yoga.jpg" alt="Yogi's Yoga Sanctuary" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">Yogi's Yoga</h2>
+                            <span class="work-card-discipline">Holistic Wellness</span>
+                        </div>
+                        <p class="work-card-desc">
+                            A peaceful digital sanctuary featuring live workshop schedules, retreat bookings, and mindfulness editorial guides.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">Organic UI</span>
+                            <span class="work-card-tag">Retreat Bookings</span>
+                            <span class="work-card-tag">0.34s Load</span>
+                            <span class="work-card-tag">4.9/5 Rating</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#yogis-yoga" class="btn-card-action btn-case-study">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="https://www.yogisyoga.in/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-live-site">
+                            <span>Visit Site</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 12: Kamini Beautician & Makeup Academy -->
+            <div class="work-card project-card-filter" data-category="academy">
+                <div class="work-card-media">
+                    <img src="assets/projects/kamini-beauty.jpg" alt="Kamini Makeup Academy" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">Kamini Beauty Academy</h2>
+                            <span class="work-card-discipline">Aesthetics &middot; Bridal Academy</span>
+                        </div>
+                        <p class="work-card-desc">
+                            Certified professional makeup academy portal, luxury bridal makeover portfolio, and automated salon appointment booking.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">Bridal Portfolio</span>
+                            <span class="work-card-tag">Course Booking</span>
+                            <span class="work-card-tag">98 Speed</span>
+                            <span class="work-card-tag">+350% Inquiries</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#kamini-beauty" class="btn-card-action btn-case-study">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="https://luxestudio-live.github.io/Kamini-Beautician-and-Makup-Academy/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-live-site">
+                            <span>Visit Site</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 12: Atelier One -->
+            <div class="work-card project-card-filter" data-category="spatial">
+                <div class="work-card-media">
+                    <img src="assets/projects/atelier-one.jpg" alt="Atelier One Architecture Showcase" loading="lazy">
+                </div>
+                <div class="work-card-content">
+                    <div>
+                        <div class="work-card-header">
+                            <h2 class="work-card-title">Atelier One</h2>
+                            <span class="work-card-discipline">Spatial &middot; Architecture</span>
+                        </div>
+                        <p class="work-card-desc">
+                            A bespoke digital atelier for premier residential architects, featuring dynamic spatial layouts and WebGL material explorations.
+                        </p>
+                        <div class="work-card-tags">
+                            <span class="work-card-tag">WebGL</span>
+                            <span class="work-card-tag">Next.js</span>
+                            <span class="work-card-tag">0.38s FCP</span>
+                            <span class="work-card-tag">99 Lighthouse</span>
+                        </div>
+                    </div>
+                    <div class="work-card-actions">
+                        <a href="case-studies.html#atelier-one" class="btn-card-action btn-case-study btn-full-width">
+                            <span>Read Case Study</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="route-hero theme-dark" style="text-align: center; padding: calc(var(--pad) * 2) var(--pad);">
+            <span class="route-meta-badge" style="margin-bottom: 1.5rem;">
+                <span class="badge-dot"></span>
+                INITIATE COLLABORATION
+            </span>
+            <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1.5rem;">
+                Ready to elevate your digital presence?
+            </h2>
+            <div style="display: flex; justify-content: center; gap: 16px;">
+                <a href="contact.html" class="nav-cta-pill magnetic" style="display: inline-flex; background: #faf9f6; color: #0c0c0c;">
+                    <span class="nav-pill-text">Start Your Project</span>
+                    <span class="nav-pill-arrow" style="color: #ff4522;">&nearr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer footer-last-frame" id="footer" data-theme="dark" role="contentinfo">
+            <div class="footer-pulse-rail" id="footerPulseRail" aria-hidden="true">
+                <div class="footer-pulse-line"></div>
+                <div class="footer-pulse-point" id="footerPulsePoint"></div>
+            </div>
+
+            <div class="footer-frame-inner">
+                <div class="footer-statement-wrap">
+                    <span class="footer-statement">BUILT FOR WHAT'S NEXT.</span>
+                </div>
+
+                <div class="footer-signature-wrap" id="footerSignatureWrap">
+                    <div class="footer-signature-wordmark" id="footerWordmark" aria-label="LuxeStudio">
+                        <span class="sig-letter" data-letter="L">L</span><span class="sig-letter"
+                            data-letter="U">U</span><span class="sig-letter" data-letter="X">X</span><span
+                            class="sig-letter" data-letter="E">E</span><span class="sig-letter"
+                            data-letter="S">S</span><span class="sig-letter" data-letter="T">T</span><span
+                            data-letter="U" class="sig-letter">U</span><span class="sig-letter"
+                            data-letter="D">D</span><span class="sig-letter" data-letter="I">I</span><span
+                            class="sig-letter" data-letter="O">O</span>
+                    </div>
+                    <div class="footer-signature-sub">
+                        <span>CREATIVE TECHNOLOGY</span>
+                    </div>
+                </div>
+
+                <div class="footer-frame-divider" aria-hidden="true"></div>
+
+                <div class="footer-metadata-container">
+                    <div class="footer-meta-primary-row">
+                        <nav class="footer-meta-nav" aria-label="Footer Navigation">
+                            <a href="work.html" class="footer-meta-link is-active">WORK</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="services.html" class="footer-meta-link">SERVICES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="case-studies.html" class="footer-meta-link">CASE STUDIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="studio.html" class="footer-meta-link">STUDIO</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="contact.html" class="footer-meta-link">CONTACT</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="faq.html" class="footer-meta-link">FAQ</a>
+                        </nav>
+
+                        <div class="footer-meta-contact">
+                            <a href="mailto:hello@theluxestudio.in" class="footer-contact-link">hello@theluxestudio.in</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-meta-legal-row">
+                        <span class="footer-copyright">&copy; 2026 LuxeStudio Creative Technology</span>
+                        <div class="footer-meta-nav">
+                            <a href="terms.html" class="footer-meta-link">TERMS</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="privacy.html" class="footer-meta-link">PRIVACY</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="cookies.html" class="footer-meta-link">COOKIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="accessibility.html" class="footer-meta-link">ACCESSIBILITY</a>
+                        </div>
+                        <button type="button" class="back-to-top-btn" id="backToTopBtn"
+                            aria-label="Scroll back to top of page">
+                            <span class="btt-text">BACK TO TOP</span>
+                            <span class="btt-arrow" aria-hidden="true">&uarr;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/cursor.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Interactive Filter Script
+        const filterBtns = document.querySelectorAll('.work-filter-btn');
+        const projectCards = document.querySelectorAll('.project-card-filter');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('is-active'));
+                btn.classList.add('is-active');
+
+                const filter = btn.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

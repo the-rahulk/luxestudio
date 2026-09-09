@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0c0c0c">
+
+    <title>Case Studies &amp; Architecture Deep Dives — LuxeStudio</title>
+    <meta name="description"
+        content="Read how LuxeStudio engineers transformative digital platforms, 3D WebGL interfaces, and high-conversion systems for ambitious global brands.">
+    <link rel="canonical" href="https://theluxestudio.in/case-studies.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css?v=20260909_v6">
+    <link rel="stylesheet" href="css/animations.css?v=20260909_v6">
+    <link rel="stylesheet" href="css/routes.css?v=20260909_v6">
+</head>
+
+<body class="loaded theme-dark" style="background: #0c0c0c; color: #faf9f6;">
+
+    <!-- Film Grain & Ambient Glow -->
+    <div class="film-grain" aria-hidden="true"></div>
+    <div class="ambient-mood-glow" style="background: radial-gradient(circle at 60% 30%, rgba(255, 69, 34, 0.12) 0%, transparent 65%);" aria-hidden="true"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot cursor-theme-dark" id="cursorDot" aria-hidden="true">
+        <div class="cursor-dot-inner"></div>
+    </div>
+    <div class="cursor-ring cursor-theme-dark" id="cursorRing" aria-hidden="true">
+        <div class="cursor-ring-inner">
+            <span class="cursor-arrow" id="cursorArrow" aria-hidden="true">&nearr;</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="nav" id="mainNav" role="banner" style="background: rgba(12, 12, 12, 0.85); border-bottom-color: rgba(255,255,255,0.1);">
+        <a href="index.html" class="logo magnetic" aria-label="LuxeStudio Home" style="color: #faf9f6;">
+            LUXE<span>STUDIO</span>
+            <span class="logo-dot"></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary Navigation">
+            <a href="services.html" class="nav-link magnetic" style="color: #faf9f6;">Services</a>
+            <a href="work.html" class="nav-link magnetic" style="color: #faf9f6;">Work</a>
+            <a href="case-studies.html" class="nav-link is-active magnetic" style="color: #faf9f6;">Case Studies</a>
+            <a href="studio.html" class="nav-link magnetic" style="color: #faf9f6;">Studio</a>
+            <a href="contact.html" class="nav-link magnetic" style="color: #faf9f6;">Contact</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="contact.html" class="nav-cta-pill magnetic" aria-label="Start Your Project">
+                <span class="nav-pill-text">Start Your Project</span>
+                <span class="nav-pill-arrow" aria-hidden="true">&nearr;</span>
+            </a>
+            <button class="menu-toggle" id="menuToggleBtn" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="menu-toggle-icon hamburger" aria-hidden="true">
+                    <span class="hamburger-line line-top" style="background:#faf9f6;"></span>
+                    <span class="hamburger-line line-mid" style="background:#faf9f6;"></span>
+                    <span class="hamburger-line line-bot" style="background:#faf9f6;"></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileMenuDrawer" aria-hidden="true">
+        <div class="mobile-drawer-inner">
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="services.html" class="mobile-nav-link">Services</a>
+                <a href="work.html" class="mobile-nav-link">Work</a>
+                <a href="case-studies.html" class="mobile-nav-link is-active">Case Studies</a>
+                <a href="studio.html" class="mobile-nav-link">Studio</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+            </nav>
+            <div class="mobile-drawer-footer">
+                <a href="mailto:hello@theluxestudio.in" class="mobile-email">hello@theluxestudio.in</a>
+                <p class="mobile-copy">&copy; 2026 LuxeStudio Creative Technology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-wrap" id="main-content">
+        <!-- Hero Header -->
+        <section class="route-hero theme-dark">
+            <div class="route-meta-strip">
+                <span class="route-meta-badge">
+                    <span class="badge-dot"></span>
+                    04 / DEEP DIVES
+                </span>
+                <span>ENGINEERING &amp; IMPACT PROOFS // 12 CASE STUDIES</span>
+            </div>
+
+            <h1 class="route-title" style="color: #faf9f6;">
+                Behind the architecture.<br>
+                Measurable outcomes.
+            </h1>
+            <p class="route-lead" style="color: rgba(255,255,255,0.75);">
+                True luxury is felt in responsiveness, technical precision, and commercial momentum. 
+                Discover how we engineer bespoke digital platforms that outperform competition.
+            </p>
+        </section>
+
+        <!-- Case Studies Jump Index Bar -->
+        <nav class="case-index-bar" aria-label="Jump to specific case study">
+            <a href="#auri-concept" class="case-index-link">01. Auri Concept</a>
+            <a href="#luxxe-labels" class="case-index-link">02. Luxxe Labels</a>
+            <a href="#virats-buildtech" class="case-index-link">03. Virats BuildTech</a>
+            <a href="#cory-ryan" class="case-index-link">04. Cory Ryan</a>
+            <a href="#the-face-craft-studio" class="case-index-link">05. The Face Craft</a>
+            <a href="#power-gold-gym" class="case-index-link">06. Power Gold Gym</a>
+            <a href="#vedant-hospital" class="case-index-link">07. Vedant Hospital</a>
+            <a href="#gravity-tutorials" class="case-index-link">08. Gravity Tutorials</a>
+            <a href="#gurukul-study-center" class="case-index-link">09. Gurukul Study</a>
+            <a href="#yogis-yoga" class="case-index-link">10. Yogi's Yoga</a>
+            <a href="#kamini-beauty" class="case-index-link">11. Kamini Beauty</a>
+            <a href="#atelier-one" class="case-index-link">12. Atelier One</a>
+        </nav>
+
+        <!-- ======================================================
+             01: AURI CONCEPT
+             ====================================================== -->
+        <article class="case-study-hero" id="auri-concept">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 02 // ARCHITECTURAL HARDWARE</span>
+                <span>MILAN &middot; DUBAI &middot; MUMBAI</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        Auri Concept — Interactive Luminaire Simulation &amp; Spec Portal
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        Engineering a real-time photometric lighting simulator enabling interior designers to visualize beam angles and color temperatures directly in browser.
+                    </p>
+                    <div class="case-hero-actions">
+                        <a href="https://www.auriconcept.com/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-case-study">
+                            <span>Visit Live Website</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/auri-concept.jpg" alt="Auri Concept Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">60 FPS</div>
+                    <div class="case-metric-label">Fluid Interactive Shader Rendering</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">4.2x</div>
+                    <div class="case-metric-label">Longer Average Session Duration</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+210%</div>
+                    <div class="case-metric-label">Specification Sheet Downloads</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>Static Catalogs in a Dynamic Market</h3>
+                    <p>
+                        Traditional PDF catalogs failed to communicate the mood, Kelvin color warmth, and optical dispersion of Auri's bespoke lighting fixtures to global architects.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>GPU-Accelerated Shader Simulation</h3>
+                    <p>
+                        We developed a custom GLSL fragment shader simulating inverse-square light falloff and Kelvin color blending across 3D room presets, running smoothly even on mobile devices.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>Commercial Architecture Spec Growth</h3>
+                    <p>
+                        Auri experienced a 210% surge in commercial specification sheet downloads by luxury hotels and retail flagship builders across EMEA.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================
+             03: LUXXE LABELS
+             ====================================================== -->
+        <article class="case-study-hero" id="luxxe-labels">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 03 // LUXURY E-COMMERCE</span>
+                <span>MUMBAI &middot; GLOBAL</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        Luxxe Labels — Editorial Lookbook &amp; Headless Checkout
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        Reinventing high-fashion retail through editorial collection narratives, instant collection filtering, and sub-second checkout journeys.
+                    </p>
+                    <div class="case-hero-actions">
+                        <a href="https://www.luxelabels.co.in/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-case-study">
+                            <span>Visit Live Website</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/luxxe-labels.jpg" alt="Luxxe Labels Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">0.45s</div>
+                    <div class="case-metric-label">Instant Page &amp; Product Transitions</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+185%</div>
+                    <div class="case-metric-label">Mobile Cart Conversion Surge</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">-62%</div>
+                    <div class="case-metric-label">Checkout Abandonment Drop</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>Generic Storefronts Degrading Luxury Perception</h3>
+                    <p>
+                        Luxxe Labels had high-end designer apparel but was hosted on a slow template that felt generic and suffered from friction during mobile checkout.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>Next.js Headless Commerce &amp; Micro-Cart Animations</h3>
+                    <p>
+                        We built a decoupled headless architecture with instant client-side route transitions, animated slide-out bag drawers, and frictionless 1-click payment gateways.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>Record Collection Sellouts</h3>
+                    <p>
+                        The re-engineered storefront drove immediate revenue gains, with their flagship bridal and pret collections selling out in record time.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================
+             04: VIRATS BUILDTECH
+             ====================================================== -->
+        <article class="case-study-hero" id="virats-buildtech">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 04 // CIVIL INFRASTRUCTURE</span>
+                <span>PUNE &middot; MUMBAI</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        Virats BuildTech — Interactive 3D Canvas &amp; Institutional Prestige
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        A digital engineering platform featuring an interactive 3D structural blueprint canvas and live municipal project milestone tracking.
+                    </p>
+                    <div class="case-hero-actions">
+                        <a href="https://luxestudio-live.github.io/virats-buildtech/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-case-study">
+                            <span>Visit Live Website</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/virats-buildtech.jpg" alt="Virats BuildTech Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">100%</div>
+                    <div class="case-metric-label">Google Core Web Vitals Pass Rate</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+280%</div>
+                    <div class="case-metric-label">Increase in Government &amp; Institutional RFPs</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">3.8x</div>
+                    <div class="case-metric-label">Longer B2B Investor Engagement</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>Communicating Mega-Scale Engineering Rigor</h3>
+                    <p>
+                        Virats BuildTech executes highways, bridges, and commercial infrastructure, but their online identity failed to reflect their engineering scale and safety standards.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>Three.js Blueprint Shaders &amp; Interactive Milestone Timelines</h3>
+                    <p>
+                        We designed a tactile dark-mode industrial design system with an interactive 3D blueprint model that users can manipulate to inspect structural layers in real time.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>High-Stakes Tender Wins</h3>
+                    <p>
+                        The portal established Virats BuildTech as the premier infrastructure contractor in western India, directly supporting multiple municipal tender bids.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================
+             05: CORY RYAN PHOTOGRAPHY
+             ====================================================== -->
+        <article class="case-study-hero" id="cory-ryan">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 05 // EDITORIAL PHOTOGRAPHY</span>
+                <span>AUSTIN, TEXAS &middot; WORLDWIDE</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        Cory Ryan — Editorial Imagery &amp; Texas Hill Country Romance
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        High-contrast gallery experience capturing Austin love stories, high-fashion editorials, and commercial shoots with sub-second image rendering.
+                    </p>
+                    <div class="case-hero-actions">
+                        <a href="https://coryryan.theluxestudio.in/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-case-study">
+                            <span>Visit Live Website</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/cory-ryan.jpg" alt="Cory Ryan Photography Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">0.32s</div>
+                    <div class="case-metric-label">Initial Hero Gallery Load Time</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+310%</div>
+                    <div class="case-metric-label">Editorial Wedding Booking Inquiries</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">98.6%</div>
+                    <div class="case-metric-label">Mobile Lighthouse Speed Score</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>High-Resolution Portfolio Lag</h3>
+                    <p>
+                        High-resolution photography portfolios often stutter and freeze during mobile scrolling. Cory Ryan needed silky-smooth image delivery without quality compromises.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>AVIF Smart Pre-Decoding &amp; Dynamic Mood Lighting</h3>
+                    <p>
+                        We implemented an asynchronous image decoding pipeline that streams adaptive AVIF fragments seamlessly as the user scrolls, paired with dynamic ambient mood glowing.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>Season Fully Booked in Advance</h3>
+                    <p>
+                        Cory Ryan booked out her entire wedding and commercial editorial season within three months of the new platform launch.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================
+             06: THE FACE CRAFT STUDIO
+             ====================================================== -->
+        <article class="case-study-hero" id="the-face-craft-studio">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 06 // CINEMA &amp; MEDIA PRODUCTION</span>
+                <span>MUMBAI &middot; GOA</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        The Face Craft Studio — Dark Atmosphere &amp; Cinematic Media Hub
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        High-impact commercial photography, campaign video production showcase, and talent booking platform with dark cinematic atmosphere.
+                    </p>
+                    <div class="case-hero-actions">
+                        <a href="https://luxestudio-live.github.io/r3-studio/pages/homepage.html" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-case-study">
+                            <span>Visit Live Website</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/the-face-craft-studio.jpg" alt="The Face Craft Studio Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">0.50s</div>
+                    <div class="case-metric-label">HLS Video Playback Time-to-First-Frame</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+240%</div>
+                    <div class="case-metric-label">Commercial Shoot Contract Bookings</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">4.5 Min</div>
+                    <div class="case-metric-label">Average Session Duration on Showreels</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>Heavy Video Buffering &amp; Fragmented Portfolios</h3>
+                    <p>
+                        High-end production studios struggle with video buffering on standard web hosts. The Face Craft required instant 4K showreel previews and frictionless talent discovery.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>Adaptive HLS Streaming &amp; WebGL Film Grain</h3>
+                    <p>
+                        We integrated edge-cached HLS adaptive bitrate streaming with a customized analog film grain shader overlay, creating a true theatrical viewing experience in the browser.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>Premier Brand Campaign Contracts</h3>
+                    <p>
+                        The studio secured long-term creative retainers with premier fashion labels and OTT video production houses.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================
+             07: POWER GOLD GYM
+             ====================================================== -->
+        <article class="case-study-hero" id="power-gold-gym">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 07 // PERFORMANCE FITNESS</span>
+                <span>MUMBAI &middot; THANE</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        Power Gold Gym — High-Energy Athletic Portal &amp; Automated Lead Intake
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        High-energy membership portal, interactive workout schedule manager, and automated athlete lead intake system with kinetic brutalist typography.
+                    </p>
+                    <div class="case-hero-actions">
+                        <a href="https://luxestudio-live.github.io/power-gold-gym/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-case-study">
+                            <span>Visit Live Website</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/power-gold-gym.jpg" alt="Power Gold Gym Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">0.28s</div>
+                    <div class="case-metric-label">Mobile Page Load Latency</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+420%</div>
+                    <div class="case-metric-label">Free Trial &amp; Membership Sign-ups</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">92%</div>
+                    <div class="case-metric-label">Direct WhatsApp Conversion Rate</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>Manual Lead Inquiries &amp; Cluttered Schedules</h3>
+                    <p>
+                        Power Gold Gym was losing prospective gym members due to slow PDF schedules and uncoordinated social media direct messages.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>Kinetic CSS Grid &amp; WhatsApp Automation Hook</h3>
+                    <p>
+                        We designed a high-contrast dark brutalist interface with dynamic training schedules and an automated WhatsApp CRM lead pipeline that alerts gym managers within 30 seconds of form submission.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>Rapid Gym Floor Expansion</h3>
+                    <p>
+                        The gym doubled its active monthly membership base within four months, prompting the opening of a second training facility.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================
+             08: VEDANT HOSPITAL
+             ====================================================== -->
+        <article class="case-study-hero" id="vedant-hospital">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 08 // HEALTHCARE &amp; MEDICAL</span>
+                <span>MUMBAI &middot; NAVI MUMBAI</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        Vedant Hospital — Patient-Centric Health Sanctuary &amp; Doctor Discovery
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        Patient-first hospital portal featuring instantaneous doctor discovery, department triage, and streamlined appointment bookings.
+                    </p>
+                    <div class="case-hero-actions">
+                        <a href="https://luxestudio-live.github.io/vedant-hospital/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-case-study">
+                            <span>Visit Live Website</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/vedant-hospital.jpg" alt="Vedant Hospital Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">100</div>
+                    <div class="case-metric-label">Accessibility &amp; Contrast Score</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">0.35s</div>
+                    <div class="case-metric-label">Doctor Search &amp; Department Triage</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+390%</div>
+                    <div class="case-metric-label">Increase in Online OPD Appointments</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>Confusing Healthcare Navigation During Emergencies</h3>
+                    <p>
+                        Patients and families visiting hospital websites need instantaneous clarity, emergency department access, and straightforward doctor booking without confusing clutter.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>Semantic Healthcare Triage &amp; Instant Doctor Index</h3>
+                    <p>
+                        We engineered an ultra-accessible, calming UI with instant client-side doctor filtering by speciality, emergency hotline triggers, and DPDP-compliant booking forms.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>Streamlined Patient Care Delivery</h3>
+                    <p>
+                        Vedant Hospital reduced front-desk phone congestion by 65% while increasing scheduled doctor consultations across 14 clinical departments.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================
+             09: GRAVITY PRIVATE TUTORIALS
+             ====================================================== -->
+        <article class="case-study-hero" id="gravity-tutorials">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 09 // ACADEMIC COACHING</span>
+                <span>MUMBAI &middot; THANE</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        Gravity Private Tutorials — Course Catalog &amp; Student Admissions
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        Comprehensive curriculum catalog, student achievements showcase, and admissions portal for competitive entrance examinations (JEE/NEET).
+                    </p>
+                    <div class="case-hero-actions">
+                        <a href="https://www.gravityprivatetutorials.com/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-case-study">
+                            <span>Visit Live Website</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/gravity-tutorials.jpg" alt="Gravity Private Tutorials Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">99</div>
+                    <div class="case-metric-label">Lighthouse SEO &amp; Performance Score</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+290%</div>
+                    <div class="case-metric-label">Increase in Direct Student Enrollments</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">88%</div>
+                    <div class="case-metric-label">Faster Curriculum Roadmaps Exploration</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>High Local Competition for Elite Batches</h3>
+                    <p>
+                        Gravity Tutorials needed to showcase their proven track record of top-ranking students and rigorous academic frameworks to prospective parents.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>Interactive Stream Navigator &amp; Verification Proofs</h3>
+                    <p>
+                        We designed an authoritative educational portal featuring interactive stream roadmaps, faculty credentials, and an automated entrance test registration system.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>Full Cohort Enrollment</h3>
+                    <p>
+                        Gravity achieved 100% seat occupancy for their advanced science and commerce batches within weeks of the digital re-launch.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================
+             10: GURUKUL STUDY CENTER
+             ====================================================== -->
+        <article class="case-study-hero" id="gurukul-study-center">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 10 // EDUCATIONAL INSTITUTE</span>
+                <span>DOMBIVLI &middot; MUMBAI</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        Gurukul Study Center — Digital Learning Hub &amp; Curriculum Guides
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        Digital knowledge hub, faculty profiles, and automated parent inquiry pipelines engineered for maximum clarity and speed.
+                    </p>
+                    <div class="case-hero-actions">
+                        <a href="https://gurukulstudycenter.in/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-case-study">
+                            <span>Visit Live Website</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/gurukul-study-center.jpg" alt="Gurukul Study Center Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">0.30s</div>
+                    <div class="case-metric-label">First Contentful Paint on Mobile</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+315%</div>
+                    <div class="case-metric-label">Parent Counseling Consultation Calls</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">100%</div>
+                    <div class="case-metric-label">Mobile SEO &amp; GEO Standards Pass</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>Bridging Heritage Values with Modern Digital Reach</h3>
+                    <p>
+                        Gurukul Study Center has a rich tradition of disciplined teaching, but lacked an online presence capable of communicating their modern digital classrooms and study library.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>Warm Editorial Typography &amp; Lead Dispatch</h3>
+                    <p>
+                        We developed a clean editorial layout blending traditional educational gravitas with sub-second page performance, featuring downloadable curriculum PDFs and instant CRM lead sync.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>High-Trust Parent Engagement</h3>
+                    <p>
+                        The institute saw a 315% increase in verified parent inquiry submissions and filled its academic library slots for the semester.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================
+             11: YOGI'S YOGA
+             ====================================================== -->
+        <article class="case-study-hero" id="yogis-yoga">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 11 // HOLISTIC WELLNESS</span>
+                <span>MUMBAI &middot; GOA &middot; RISHIKESH</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        Yogi's Yoga — Peaceful Sanctuary &amp; Retreat Booking Experience
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        A peaceful digital sanctuary featuring live workshop schedules, retreat bookings, and mindfulness editorial guides.
+                    </p>
+                    <div class="case-hero-actions">
+                        <a href="https://www.yogisyoga.in/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-case-study">
+                            <span>Visit Live Website</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/yogis-yoga.jpg" alt="Yogi's Yoga Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">0.34s</div>
+                    <div class="case-metric-label">Initial Page Load &amp; Schedule Render</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+260%</div>
+                    <div class="case-metric-label">Online Retreat Registrations</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">4.9/5</div>
+                    <div class="case-metric-label">User Experience &amp; Aesthetics Rating</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>Translating Serenity and Warmth into Code</h3>
+                    <p>
+                        Wellness brands often get saddled with generic corporate layouts that clash with the tranquil, mindful ethos of yoga and spiritual retreats.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>Organic Timber Tones &amp; Ambient Transitions</h3>
+                    <p>
+                        We created an organic, sunlit design language with subtle ambient light gradients, intuitive daily schedule selectors, and direct retreat booking integrations.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>Sold-Out Seasonal Retreats</h3>
+                    <p>
+                        Yogi's Yoga sold out its winter Goa wellness retreats within 48 hours of releasing booking slots through the new platform.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================
+             12: KAMINI BEAUTICIAN & MAKEUP ACADEMY
+             ====================================================== -->
+        <article class="case-study-hero" id="kamini-beauty">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 12 // AESTHETICS &amp; ACADEMY</span>
+                <span>MUMBAI &middot; THANE</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        Kamini Beauty Academy — Luxury Bridal Aesthetics &amp; Course Bookings
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        Certified professional makeup academy portal, luxury bridal makeover portfolio, and automated salon appointment booking.
+                    </p>
+                    <div class="case-hero-actions">
+                        <a href="https://luxestudio-live.github.io/Kamini-Beautician-and-Makup-Academy/" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-case-study">
+                            <span>Visit Live Website</span>
+                            <span aria-hidden="true">&nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/kamini-beauty.jpg" alt="Kamini Beauty Academy Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">98</div>
+                    <div class="case-metric-label">Mobile Lighthouse Performance Score</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+350%</div>
+                    <div class="case-metric-label">Bridal Package Inquiries</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">0.32s</div>
+                    <div class="case-metric-label">High-Res Bridal Gallery Load Speed</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>Showcasing Glamour Without Speed Penalties</h3>
+                    <p>
+                        Bridal makeover decisions require pristine image clarity. Kamini Beauty needed an opulent editorial aesthetic that loaded instantaneously on mobile phones.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>Illuminated Mirror UI &amp; WhatsApp Booking Hooks</h3>
+                    <p>
+                        We designed a luminous beauty studio layout featuring interactive bridal before/after showcases, certified academy course modules, and instant WhatsApp appointment triggers.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>Record Wedding Season Bookings</h3>
+                    <p>
+                        Kamini Beauty booked over 120 wedding makeover packages and filled all certified professional makeup academy batches for the year.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================
+             12: ATELIER ONE
+             ====================================================== -->
+        <article class="case-study-hero" id="atelier-one">
+            <div class="route-meta-strip">
+                <span style="color: var(--accent);">CASE STUDY 12 // ARCHITECTURE &amp; SPATIAL</span>
+                <span>MUMBAI &middot; LONDON</span>
+            </div>
+
+            <div class="case-study-hero-grid">
+                <div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem;">
+                        Atelier One — Spatial Storytelling &amp; Zero-Latency Portfolio
+                    </h2>
+                    <p style="font-size: 1.0625rem; color: var(--black-muted); line-height: 1.6;">
+                        How we transformed an international architectural practice into an immersive digital atelier with WebGL material explorations and sub-second asset delivery.
+                    </p>
+                    <div class="case-hero-actions">
+                        <span class="work-card-tag" style="padding: 8px 16px; font-size: 0.8125rem; background: rgba(255, 69, 34, 0.12); color: var(--accent); border: 1px solid rgba(255, 69, 34, 0.3);">
+                            Concept &middot; WebGL Architectural Prototype
+                        </span>
+                    </div>
+                </div>
+                <div class="case-hero-media">
+                    <img src="assets/projects/atelier-one.jpg" alt="Atelier One Architecture Case Study Showcase" loading="lazy">
+                </div>
+            </div>
+
+            <div class="case-metrics-grid">
+                <div class="case-metric-box">
+                    <div class="case-metric-val">99</div>
+                    <div class="case-metric-label">Google Lighthouse Performance Score</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">0.38s</div>
+                    <div class="case-metric-label">First Contentful Paint (FCP) Global CDN</div>
+                </div>
+                <div class="case-metric-box">
+                    <div class="case-metric-val">+340%</div>
+                    <div class="case-metric-label">Increase in High-Net-Worth Client Inquiries</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="case-narrative-section">
+            <div class="case-narrative-block">
+                <div class="case-block-label">01 / The Challenge</div>
+                <div class="case-block-body">
+                    <h3>Heavy Media Bloat &amp; Lost Prospects</h3>
+                    <p>
+                        High-end architecture firms depend heavily on 4K renders, structural blueprints, and photography. 
+                        The previous website took over 4.8 seconds to load on mobile networks, causing high bounce rates among prospective luxury developers.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">02 / Engineering</div>
+                <div class="case-block-body">
+                    <h3>Progressive Asset Streaming &amp; WebGL Canvas</h3>
+                    <p>
+                        We architected a custom image optimization pipeline with AVIF/WebP srcset generation, coupled with GSAP scroll choreography that initiates asset pre-decoding offscreen. 
+                        A custom WebGL canvas allowed interactive lighting sweeps across architectural elevations.
+                    </p>
+                </div>
+            </div>
+            <div class="case-narrative-block">
+                <div class="case-block-label">03 / The Outcome</div>
+                <div class="case-block-body">
+                    <h3>Multi-Million Dollar Contract Conversions</h3>
+                    <p>
+                        Atelier One secured four tier-one real estate contracts within 60 days of launch, attributing the conversion directly to the immersive and responsive presentation of their past works.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <section class="route-hero theme-dark" style="text-align: center; padding: calc(var(--pad) * 2) var(--pad);">
+            <span class="route-meta-badge" style="margin-bottom: 1.5rem;">
+                <span class="badge-dot"></span>
+                YOUR SUCCESS STORY
+            </span>
+            <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1.5rem;">
+                Ready to achieve similar results?
+            </h2>
+            <div style="display: flex; justify-content: center; gap: 16px;">
+                <a href="contact.html" class="nav-cta-pill magnetic" style="display: inline-flex; background: #faf9f6; color: #0c0c0c;">
+                    <span class="nav-pill-text">Start Your Project</span>
+                    <span class="nav-pill-arrow" style="color: #ff4522;">&nearr;</span>
+                </a>
+                <a href="work.html" class="work-filter-btn magnetic" style="border-color: rgba(255,255,255,0.2); color: #faf9f6;">
+                    Explore Works Archive &rarr;
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer footer-last-frame" id="footer" data-theme="dark" role="contentinfo">
+            <div class="footer-pulse-rail" id="footerPulseRail" aria-hidden="true">
+                <div class="footer-pulse-line"></div>
+                <div class="footer-pulse-point" id="footerPulsePoint"></div>
+            </div>
+
+            <div class="footer-frame-inner">
+                <div class="footer-statement-wrap">
+                    <span class="footer-statement">BUILT FOR WHAT'S NEXT.</span>
+                </div>
+
+                <div class="footer-signature-wrap" id="footerSignatureWrap">
+                    <div class="footer-signature-wordmark" id="footerWordmark" aria-label="LuxeStudio">
+                        <span class="sig-letter" data-letter="L">L</span><span class="sig-letter"
+                            data-letter="U">U</span><span class="sig-letter" data-letter="X">X</span><span
+                            class="sig-letter" data-letter="E">E</span><span class="sig-letter"
+                            data-letter="S">S</span><span class="sig-letter" data-letter="T">T</span><span
+                            data-letter="U" class="sig-letter">U</span><span class="sig-letter"
+                            data-letter="D">D</span><span class="sig-letter" data-letter="I">I</span><span
+                            class="sig-letter" data-letter="O">O</span>
+                    </div>
+                    <div class="footer-signature-sub">
+                        <span>CREATIVE TECHNOLOGY</span>
+                    </div>
+                </div>
+
+                <div class="footer-frame-divider" aria-hidden="true"></div>
+
+                <div class="footer-metadata-container">
+                    <div class="footer-meta-primary-row">
+                        <nav class="footer-meta-nav" aria-label="Footer Navigation">
+                            <a href="work.html" class="footer-meta-link">WORK</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="services.html" class="footer-meta-link">SERVICES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="case-studies.html" class="footer-meta-link is-active">CASE STUDIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="studio.html" class="footer-meta-link">STUDIO</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="contact.html" class="footer-meta-link">CONTACT</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="faq.html" class="footer-meta-link">FAQ</a>
+                        </nav>
+
+                        <div class="footer-meta-contact">
+                            <a href="mailto:hello@theluxestudio.in" class="footer-contact-link">hello@theluxestudio.in</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-meta-legal-row">
+                        <span class="footer-copyright">&copy; 2026 LuxeStudio Creative Technology</span>
+                        <div class="footer-meta-nav">
+                            <a href="terms.html" class="footer-meta-link">TERMS</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="privacy.html" class="footer-meta-link">PRIVACY</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="cookies.html" class="footer-meta-link">COOKIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="accessibility.html" class="footer-meta-link">ACCESSIBILITY</a>
+                        </div>
+                        <button type="button" class="back-to-top-btn" id="backToTopBtn"
+                            aria-label="Scroll back to top of page">
+                            <span class="btt-text">BACK TO TOP</span>
+                            <span class="btt-arrow" aria-hidden="true">&uarr;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/cursor.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101010">
+
+    <title>Message Received — LuxeStudio Creative Technology</title>
+    <meta name="description" content="Your message has been received. We'll be in touch within 24 hours.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://theluxestudio.in/thank-you.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css?v=20260909_v8">
+    <link rel="stylesheet" href="css/animations.css?v=20260909_v8">
+    <link rel="stylesheet" href="css/routes.css?v=20260909_v8">
+
+    <style>
+        /* ── Thank You — centered full-height layout ── */
+        .ty-page {
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ty-main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px var(--pad) 80px;
+        }
+
+        .ty-center {
+            max-width: 640px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Check mark icon */
+        .ty-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(255, 69, 34, 0.12);
+            border: 1px solid rgba(255, 69, 34, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 1.375rem;
+            color: var(--accent);
+        }
+
+        .ty-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .ty-heading {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.0;
+            letter-spacing: -0.03em;
+            color: var(--paper);
+            margin: 0 0 1.25rem;
+        }
+
+        .ty-body {
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            color: rgba(247, 245, 240, 0.6);
+            line-height: 1.65;
+            margin: 0 0 2.5rem;
+        }
+
+        /* What's next — 3 simple steps */
+        .ty-steps {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 28px 32px;
+            text-align: left;
+            margin-bottom: 2.5rem;
+        }
+
+        .ty-steps-label {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(247, 245, 240, 0.35);
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .ty-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .ty-step:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .ty-step:first-of-type {
+            padding-top: 0;
+        }
+
+        .ty-step-num {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            min-width: 20px;
+            padding-top: 2px;
+        }
+
+        .ty-step-text {
+            font-size: 0.9375rem;
+            color: rgba(247, 245, 240, 0.75);
+            line-height: 1.5;
+        }
+
+        .ty-step-text strong {
+            color: var(--paper);
+            font-weight: 600;
+        }
+
+        /* Action buttons */
+        .ty-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .ty-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 24px;
+            background: var(--paper);
+            color: var(--ink);
+            border: none;
+            border-radius: 999px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            cursor: pointer;
+        }
+
+        .ty-btn-primary:hover {
+            opacity: 0.88;
+        }
+
+        .ty-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 24px;
+            background: transparent;
+            color: rgba(247, 245, 240, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .ty-btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: var(--paper);
+        }
+
+        @media (max-width: 480px) {
+            .ty-steps {
+                padding: 20px;
+            }
+
+            .ty-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .ty-btn-primary,
+            .ty-btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="loaded ty-page" style="background: #101010;">
+
+    <!-- Film Grain -->
+    <div class="film-grain" aria-hidden="true"></div>
+    <div class="ambient-mood-glow"
+        style="background: radial-gradient(circle at 60% 20%, rgba(255,69,34,0.10) 0%, transparent 55%);"
+        aria-hidden="true"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true">
+        <div class="cursor-dot-inner"></div>
+    </div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true">
+        <div class="cursor-ring-inner">
+            <span class="cursor-arrow" id="cursorArrow" aria-hidden="true">&nearr;</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="nav theme-dark" id="mainNav" role="banner"
+        style="background: rgba(16,16,16,0.85); border-bottom-color: rgba(255,255,255,0.08);">
+        <a href="index.html" class="logo magnetic" aria-label="LuxeStudio Home" style="color: #F7F5F0;">
+            LUXE<span>STUDIO</span>
+            <span class="logo-dot"></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary Navigation">
+            <a href="services.html" class="nav-link magnetic" style="color:#F7F5F0;">Services</a>
+            <a href="work.html" class="nav-link magnetic" style="color:#F7F5F0;">Work</a>
+            <a href="case-studies.html" class="nav-link magnetic" style="color:#F7F5F0;">Case Studies</a>
+            <a href="studio.html" class="nav-link magnetic" style="color:#F7F5F0;">Studio</a>
+            <a href="contact.html" class="nav-link magnetic" style="color:#F7F5F0;">Contact</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="work.html" class="nav-cta-pill magnetic" aria-label="View Our Work">
+                <span class="nav-pill-text">View Our Work</span>
+                <span class="nav-pill-arrow" aria-hidden="true">&nearr;</span>
+            </a>
+            <button class="menu-toggle" id="menuToggleBtn" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="menu-toggle-icon hamburger" aria-hidden="true">
+                    <span class="hamburger-line line-top" style="background:#F7F5F0;"></span>
+                    <span class="hamburger-line line-mid" style="background:#F7F5F0;"></span>
+                    <span class="hamburger-line line-bot" style="background:#F7F5F0;"></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileMenuDrawer" aria-hidden="true">
+        <div class="mobile-drawer-inner">
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="services.html" class="mobile-nav-link">Services</a>
+                <a href="work.html" class="mobile-nav-link">Work</a>
+                <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+                <a href="studio.html" class="mobile-nav-link">Studio</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <a href="faq.html" class="mobile-nav-link">FAQ</a>
+            </nav>
+            <div class="mobile-drawer-footer">
+                <a href="mailto:hello@theluxestudio.in" class="mobile-email">hello@theluxestudio.in</a>
+                <p class="mobile-copy">&copy; 2026 LuxeStudio Creative Technology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <main class="ty-main" id="main-content">
+        <div class="ty-center">
+
+            <!-- Icon -->
+            <div class="ty-icon" aria-hidden="true">✓</div>
+
+            <!-- Label -->
+            <span class="ty-label">Message Received</span>
+
+            <!-- Headline -->
+            <h1 class="ty-heading">We'll be in touch.</h1>
+
+            <!-- Body -->
+            <p class="ty-body">
+                Your brief has landed with us. We review every inquiry directly
+                and will get back to you within 24 hours with a clear, honest response.
+            </p>
+
+            <!-- What happens next -->
+            <div class="ty-steps">
+                <span class="ty-steps-label">What happens next</span>
+
+                <div class="ty-step">
+                    <span class="ty-step-num">01</span>
+                    <span class="ty-step-text">
+                        <strong>We review your brief</strong> — within 24 hours, your message is read directly by the people who do the work.
+                    </span>
+                </div>
+
+                <div class="ty-step">
+                    <span class="ty-step-num">02</span>
+                    <span class="ty-step-text">
+                        <strong>We reply with clarity</strong> — no vague acknowledgements. We'll share an honest first read on what you need and how we can help.
+                    </span>
+                </div>
+
+                <div class="ty-step">
+                    <span class="ty-step-num">03</span>
+                    <span class="ty-step-text">
+                        <strong>We set up a conversation</strong> — if it's a fit, we'll schedule a discovery call to go deeper before anything is agreed.
+                    </span>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="ty-actions">
+                <a href="work.html" class="ty-btn-primary magnetic">
+                    <span>View Our Work</span>
+                    <span aria-hidden="true">&nearr;</span>
+                </a>
+                <a href="index.html" class="ty-btn-secondary magnetic">
+                    Back to Home &rarr;
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer footer-last-frame" id="footer" data-theme="dark" role="contentinfo">
+        <div class="footer-pulse-rail" id="footerPulseRail" aria-hidden="true">
+            <div class="footer-pulse-line"></div>
+            <div class="footer-pulse-point" id="footerPulsePoint"></div>
+        </div>
+
+        <div class="footer-frame-inner">
+            <div class="footer-statement-wrap">
+                <span class="footer-statement">BUILT FOR WHAT'S NEXT.</span>
+            </div>
+
+            <div class="footer-signature-wrap" id="footerSignatureWrap">
+                <div class="footer-signature-wordmark" id="footerWordmark" aria-label="LuxeStudio">
+                    <span class="sig-letter" data-letter="L">L</span><span class="sig-letter"
+                        data-letter="U">U</span><span class="sig-letter" data-letter="X">X</span><span
+                        class="sig-letter" data-letter="E">E</span><span class="sig-letter"
+                        data-letter="S">S</span><span class="sig-letter" data-letter="T">T</span><span
+                        data-letter="U" class="sig-letter">U</span><span class="sig-letter"
+                        data-letter="D">D</span><span class="sig-letter" data-letter="I">I</span><span
+                        class="sig-letter" data-letter="O">O</span>
+                </div>
+                <div class="footer-signature-sub">
+                    <span>CREATIVE TECHNOLOGY</span>
+                </div>
+            </div>
+
+            <div class="footer-frame-divider" aria-hidden="true"></div>
+
+            <div class="footer-metadata-container">
+                <div class="footer-meta-primary-row">
+                    <nav class="footer-meta-nav" aria-label="Footer Navigation">
+                        <a href="work.html" class="footer-meta-link">WORK</a>
+                        <span class="footer-meta-sep" aria-hidden="true">/</span>
+                        <a href="services.html" class="footer-meta-link">SERVICES</a>
+                        <span class="footer-meta-sep" aria-hidden="true">/</span>
+                        <a href="case-studies.html" class="footer-meta-link">CASE STUDIES</a>
+                        <span class="footer-meta-sep" aria-hidden="true">/</span>
+                        <a href="studio.html" class="footer-meta-link">STUDIO</a>
+                        <span class="footer-meta-sep" aria-hidden="true">/</span>
+                        <a href="contact.html" class="footer-meta-link">CONTACT</a>
+                        <span class="footer-meta-sep" aria-hidden="true">/</span>
+                        <a href="faq.html" class="footer-meta-link">FAQ</a>
+                    </nav>
+
+                    <div class="footer-meta-contact">
+                        <a href="mailto:hello@theluxestudio.in" class="footer-contact-link">hello@theluxestudio.in</a>
+                    </div>
+                </div>
+
+                <div class="footer-meta-legal-row">
+                    <span class="footer-copyright">&copy; 2026 LuxeStudio Creative Technology</span>
+                    <div class="footer-meta-nav">
+                        <a href="terms.html" class="footer-meta-link">TERMS</a>
+                        <span class="footer-meta-sep" aria-hidden="true">/</span>
+                        <a href="privacy.html" class="footer-meta-link">PRIVACY</a>
+                        <span class="footer-meta-sep" aria-hidden="true">/</span>
+                        <a href="cookies.html" class="footer-meta-link">COOKIES</a>
+                        <span class="footer-meta-sep" aria-hidden="true">/</span>
+                        <a href="accessibility.html" class="footer-meta-link">ACCESSIBILITY</a>
+                    </div>
+                    <button type="button" class="back-to-top-btn" id="backToTopBtn"
+                        aria-label="Scroll back to top of page">
+                        <span class="btt-text">BACK TO TOP</span>
+                        <span class="btt-arrow" aria-hidden="true">&uarr;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/cursor.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

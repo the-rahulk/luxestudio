@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101010">
+
+    <title>Contact & Project Discovery — LuxeStudio Creative Technology</title>
+    <meta name="description"
+        content="Have something worth building? Start a conversation, book a 30-minute discovery call, or send your brief directly to LuxeStudio.">
+    <link rel="canonical" href="https://theluxestudio.in/contact.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css?v=20260909_v8">
+    <link rel="stylesheet" href="css/animations.css?v=20260909_v8">
+    <link rel="stylesheet" href="css/routes.css?v=20260909_v8">
+
+    <style>
+        /* ── Contact page: warm paper theme — matches homepage identity ── */
+        body {
+            background: #F5F3EE;
+            color: #111111;
+        }
+
+        /* ── Hero ── */
+        .ct-hero {
+            padding: clamp(140px, 16vw, 200px) var(--pad) clamp(48px, 6vw, 80px);
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .ct-hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(17, 17, 17, 0.4);
+            margin-bottom: 2.5rem;
+        }
+
+        .ct-hero-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+        }
+
+        .ct-hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 2.2s ease-in-out infinite;
+        }
+
+        .ct-hero-h1 {
+            font-size: clamp(3.25rem, 8vw, 7.5rem);
+            font-weight: 800;
+            line-height: 0.93;
+            letter-spacing: -0.04em;
+            color: #111111;
+            margin: 0 0 1.5rem;
+        }
+
+        .ct-hero-lead {
+            font-size: clamp(1rem, 1.4vw, 1.125rem);
+            color: rgba(17, 17, 17, 0.5);
+            line-height: 1.65;
+            max-width: 520px;
+        }
+
+        /* ── Divider line ── */
+        .ct-divider {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 var(--pad);
+        }
+
+        .ct-divider-line {
+            border: none;
+            border-top: 1px solid rgba(17, 17, 17, 0.1);
+        }
+
+        /* ── CTA cluster — editorial big type links ── */
+        .ct-cta-wrap {
+            padding: clamp(48px, 6vw, 80px) var(--pad);
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .ct-cta-cluster {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            gap: clamp(24px, 4vw, 56px);
+            padding-bottom: clamp(40px, 5vw, 64px);
+            border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+        }
+
+        /* 01 — Primary */
+        .ct-cta-primary {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #111111;
+            text-decoration: none;
+            cursor: pointer;
+            transition: border-color 0.3s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .ct-cta-primary:hover {
+            border-color: var(--accent);
+        }
+
+        .ct-cta-primary .ct-cta-num {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: rgba(17, 17, 17, 0.35);
+            transition: color 0.3s;
+        }
+
+        .ct-cta-primary:hover .ct-cta-num {
+            color: var(--accent);
+        }
+
+        .ct-cta-primary .ct-cta-label {
+            font-size: clamp(1.5rem, 3.2vw, 2.875rem);
+            font-weight: 600;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: #111111;
+            transition: color 0.3s;
+        }
+
+        .ct-cta-primary:hover .ct-cta-label {
+            color: var(--accent);
+        }
+
+        .ct-cta-primary .ct-cta-arr {
+            font-size: clamp(1.375rem, 2.8vw, 2.25rem);
+            color: #111111;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s;
+        }
+
+        .ct-cta-primary:hover .ct-cta-arr {
+            transform: translate(5px, -5px);
+            color: var(--accent);
+        }
+
+        /* 02 — Secondary */
+        .ct-cta-secondary {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            cursor: pointer;
+            padding-bottom: 8px;
+        }
+
+        .ct-cta-sec-row {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(17, 17, 17, 0.25);
+            transition: border-color 0.3s;
+        }
+
+        .ct-cta-secondary:hover .ct-cta-sec-row {
+            border-color: rgba(247, 245, 240, 0.55);
+        }
+
+        .ct-cta-secondary .ct-cta-num {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            letter-spacing: 0.1em;
+            color: rgba(17, 17, 17, 0.3);
+            transition: color 0.3s;
+        }
+
+        .ct-cta-secondary:hover .ct-cta-num {
+            color: var(--accent);
+        }
+
+        .ct-cta-secondary .ct-cta-label {
+            font-size: clamp(1.0625rem, 2.1vw, 1.75rem);
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            color: rgba(17, 17, 17, 0.7);
+            transition: color 0.3s;
+        }
+
+        .ct-cta-secondary:hover .ct-cta-label {
+            color: #F7F5F0;
+        }
+
+        .ct-cta-secondary .ct-cta-arr {
+            font-size: clamp(1rem, 1.8vw, 1.5rem);
+            color: rgba(17, 17, 17, 0.45);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s;
+        }
+
+        .ct-cta-secondary:hover .ct-cta-arr {
+            transform: translate(3px, -3px);
+            color: var(--accent);
+        }
+
+        .ct-cta-sec-sub {
+            font-family: var(--font-mono);
+            font-size: 0.625rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(17, 17, 17, 0.35);
+            margin-top: 6px;
+            transition: color 0.3s;
+        }
+
+        .ct-cta-secondary:hover .ct-cta-sec-sub {
+            color: rgba(17, 17, 17, 0.6);
+        }
+
+        /* ── Direct channels + Form ── */
+        .ct-body {
+            padding: clamp(48px, 6vw, 80px) var(--pad) clamp(64px, 8vw, 120px);
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.35fr;
+            gap: clamp(40px, 6vw, 96px);
+            align-items: start;
+        }
+
+        /* Left — Direct channels */
+        .ct-channels-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .ct-channels-h2 {
+            font-size: clamp(1.625rem, 2.5vw, 2.25rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            color: #111111;
+            margin: 0 0 14px;
+        }
+
+        .ct-channels-desc {
+            color: rgba(17, 17, 17, 0.7);
+            font-size: 0.9375rem;
+            line-height: 1.65;
+            margin-bottom: 2.25rem;
+        }
+
+        .ct-channels-list {
+            border-top: 1px solid rgba(17, 17, 17, 0.12);
+            padding-top: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .ct-channel-card {
+            border: 1px solid rgba(17, 17, 17, 0.14);
+            border-radius: 10px;
+            padding: 18px 20px;
+            background: rgba(17, 17, 17, 0.03);
+            transition: border-color 0.25s;
+        }
+
+        .ct-channel-card:hover {
+            border-color: rgba(17, 17, 17, 0.3);
+        }
+
+        .ct-channel-tag {
+            font-family: var(--font-mono);
+            font-size: 0.625rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(17, 17, 17, 0.65);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .ct-channel-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .ct-channel-link {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: #111111;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .ct-channel-link:hover {
+            color: var(--accent);
+        }
+
+        .ct-copy-btn {
+            padding: 5px 12px;
+            font-family: var(--font-mono);
+            font-size: 0.625rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 999px;
+            border: 1px solid rgba(17, 17, 17, 0.25);
+            background: transparent;
+            color: rgba(17, 17, 17, 0.7);
+            font-weight: 500;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .ct-copy-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .ct-channel-arr {
+            color: var(--accent);
+            font-size: 1.125rem;
+        }
+
+        /* Right — Form */
+        .ct-form-panel {
+            background: #ffffff;
+            border: 1px solid rgba(17, 17, 17, 0.12);
+            border-radius: 14px;
+            padding: clamp(28px, 4vw, 48px);
+            box-shadow: 0 4px 30px rgba(17, 17, 17, 0.08);
+        }
+
+        .ct-form-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .ct-form-heading {
+            font-size: clamp(1.375rem, 2vw, 1.875rem);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            color: #111111;
+            margin: 0 0 2rem;
+        }
+
+        .ct-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .ct-field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .ct-field-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #000000;
+            font-weight: 700;
+        }
+
+        .ct-field-input,
+        .ct-field-textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: #ffffff;
+            border: 1.5px solid rgba(0, 0, 0, 0.28);
+            border-radius: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.9375rem;
+            color: #000000;
+            font-weight: 600;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+        }
+
+        .ct-field-input::placeholder,
+        .ct-field-textarea::placeholder {
+            color: #333333 !important;
+            -webkit-text-fill-color: #333333 !important;
+            opacity: 1 !important;
+            font-weight: 500;
+        }
+
+        .ct-field-input::-webkit-input-placeholder,
+        .ct-field-textarea::-webkit-input-placeholder {
+            color: #333333 !important;
+            -webkit-text-fill-color: #333333 !important;
+            opacity: 1 !important;
+            font-weight: 500;
+        }
+
+        .ct-field-input::-moz-placeholder,
+        .ct-field-textarea::-moz-placeholder {
+            color: #333333 !important;
+            opacity: 1 !important;
+            font-weight: 500;
+        }
+
+        .ct-field-input:focus,
+        .ct-field-textarea:focus {
+            border-color: var(--accent);
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(255, 69, 34, 0.15);
+        }
+
+        .ct-field-textarea {
+            resize: vertical;
+            min-height: 115px;
+            line-height: 1.5;
+        }
+
+        /* ── Strict Validation UI States ── */
+        .ct-field {
+            position: relative;
+        }
+
+        .ct-field-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ct-char-counter {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            color: rgba(17, 17, 17, 0.45);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .ct-char-counter.is-met {
+            color: #2E7D32;
+            font-weight: 600;
+        }
+
+        .ct-field-error {
+            display: none;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #D32F2F;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            margin-top: 3px;
+            line-height: 1.35;
+        }
+
+        .ct-field.has-error .ct-field-error {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .ct-field.has-error .ct-field-input,
+        .ct-field.has-error .ct-field-textarea {
+            border-color: #D32F2F !important;
+            background: #FFFDFD;
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.12) !important;
+        }
+
+        .ct-field.is-valid .ct-field-input,
+        .ct-field.is-valid .ct-field-textarea {
+            border-color: rgba(46, 125, 50, 0.6);
+        }
+
+        .ct-field.shake {
+            animation: ctFieldShake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        }
+
+        @keyframes ctFieldShake {
+            10%, 90% { transform: translate3d(-1px, 0, 0); }
+            20%, 80% { transform: translate3d(2px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+            40%, 60% { transform: translate3d(4px, 0, 0); }
+        }
+
+        .ct-submit-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 15px 24px;
+            margin-top: 4px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.9375rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s, background-color 0.2s;
+        }
+
+        .ct-submit-btn:hover {
+            opacity: 0.87;
+            transform: translateY(-1px);
+        }
+
+        .ct-submit-btn:disabled {
+            opacity: 0.75;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .ct-spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: ctSpin 0.7s linear infinite;
+        }
+
+        @keyframes ctSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        .ct-disclaimer {
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            letter-spacing: 0.08em;
+            color: #222222;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 860px) {
+            .ct-body {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .ct-hero {
+                padding: 120px var(--pad) 32px;
+            }
+            .ct-hero-h1 {
+                font-size: clamp(2.4rem, 11vw, 3.2rem);
+            }
+            .ct-cta-wrap {
+                padding: 32px var(--pad);
+            }
+            .ct-cta-cluster {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+            .ct-body {
+                padding: 32px var(--pad) 64px;
+                gap: 36px;
+            }
+            .ct-form-panel {
+                padding: 24px 18px;
+                border-radius: 12px;
+            }
+            .ct-field-input,
+            .ct-field-textarea {
+                font-size: 16px !important; /* Prevents auto-zoom on iOS */
+            }
+        }
+    </style>
+</head>
+
+<body class="loaded">
+
+    <!-- Film Grain & Ambient Glow -->
+    <div class="film-grain" aria-hidden="true"></div>
+    <div class="ambient-mood-glow" aria-hidden="true"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true">
+        <div class="cursor-dot-inner"></div>
+    </div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true">
+        <div class="cursor-ring-inner">
+            <span class="cursor-arrow" id="cursorArrow" aria-hidden="true">&nearr;</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="nav" id="mainNav" role="banner">
+        <a href="index.html" class="logo magnetic" aria-label="LuxeStudio Home">
+            LUXE<span>STUDIO</span>
+            <span class="logo-dot"></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary Navigation">
+            <a href="services.html" class="nav-link magnetic">Services</a>
+            <a href="work.html" class="nav-link magnetic">Work</a>
+            <a href="case-studies.html" class="nav-link magnetic">Case Studies</a>
+            <a href="studio.html" class="nav-link magnetic">Studio</a>
+            <a href="contact.html" class="nav-link is-active magnetic">Contact</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="contact.html" class="nav-cta-pill magnetic" aria-label="Start Your Project">
+                <span class="nav-pill-text">Start Your Project</span>
+                <span class="nav-pill-arrow" aria-hidden="true">&nearr;</span>
+            </a>
+            <button class="menu-toggle" id="menuToggleBtn" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="menu-toggle-icon hamburger" aria-hidden="true">
+                    <span class="hamburger-line line-top"></span>
+                    <span class="hamburger-line line-mid"></span>
+                    <span class="hamburger-line line-bot"></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileMenuDrawer" aria-hidden="true">
+        <div class="mobile-drawer-inner">
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="services.html" class="mobile-nav-link">Services</a>
+                <a href="work.html" class="mobile-nav-link">Work</a>
+                <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+                <a href="studio.html" class="mobile-nav-link">Studio</a>
+                <a href="contact.html" class="mobile-nav-link is-active">Contact</a>
+                <a href="faq.html" class="mobile-nav-link">FAQ</a>
+            </nav>
+            <div class="mobile-drawer-footer">
+                <a href="mailto:hello@theluxestudio.in" class="mobile-email">hello@theluxestudio.in</a>
+                <p class="mobile-copy">&copy; 2026 LuxeStudio Creative Technology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- ── Hero ── -->
+        <div class="ct-hero">
+            <div class="ct-hero-meta">
+                <span class="ct-hero-badge">
+                    <span class="ct-hero-badge-dot"></span>
+                    09 / Contact
+                </span>
+                <span>Start Your Project</span>
+            </div>
+
+            <h1 class="ct-hero-h1">
+                Have something<br>worth building?
+            </h1>
+            <p class="ct-hero-lead">
+                Tell us what you're building, what isn't working, or where you want to go next.
+                We review every inquiry directly and respond within 24 hours.
+            </p>
+        </div>
+
+        <!-- ── CTA Cluster ── -->
+        <div class="ct-cta-wrap">
+            <div class="ct-cta-cluster">
+
+                <!-- 01: Start a Conversation -->
+                <a href="mailto:hello@theluxestudio.in" class="ct-cta-primary magnetic"
+                    aria-label="Start a conversation by email">
+                    <span class="ct-cta-num">01</span>
+                    <span class="ct-cta-label">Start a conversation</span>
+                    <span class="ct-cta-arr" aria-hidden="true">&nearr;</span>
+                </a>
+
+                <!-- 02: Book a Call -->
+                <a href="https://calendly.com/the-luxestudio/project-discovery" target="_blank"
+                    rel="noopener noreferrer" class="ct-cta-secondary magnetic"
+                    aria-label="Book a 30-minute project discovery call">
+                    <div class="ct-cta-sec-row">
+                        <span class="ct-cta-num">02</span>
+                        <span class="ct-cta-label">Book a call</span>
+                        <span class="ct-cta-arr" aria-hidden="true">&nearr;</span>
+                    </div>
+                    <span class="ct-cta-sec-sub">30 MIN &middot; PROJECT DISCOVERY</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ── Channels + Form ── -->
+        <div class="ct-body">
+
+            <!-- Left: Direct Channels -->
+            <div>
+                <span class="ct-channels-eyebrow">Direct Reach</span>
+                <h2 class="ct-channels-h2">Direct access.<br>Zero agency runaround.</h2>
+                <p class="ct-channels-desc">
+                    You talk directly with the people who build and architect the work. No account executives, no vague
+                    delays, no inbox abyss.
+                </p>
+
+                <div class="ct-channels-list">
+
+                    <!-- Email -->
+                    <div class="ct-channel-card">
+                        <span class="ct-channel-tag">Direct Email</span>
+                        <div class="ct-channel-row">
+                            <a href="mailto:hello@theluxestudio.in" class="ct-channel-link magnetic">
+                                hello@theluxestudio.in
+                            </a>
+                            <button class="ct-copy-btn magnetic" id="copyEmailBtn"
+                                aria-label="Copy email address to clipboard">Copy</button>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="ct-channel-card">
+                        <span class="ct-channel-tag">WhatsApp Priority</span>
+                        <div class="ct-channel-row">
+                            <a href="https://wa.me/919987031290" target="_blank" rel="noopener noreferrer"
+                                class="ct-channel-link magnetic" aria-label="Message on WhatsApp">
+                                +91 9987031290
+                            </a>
+                            <span class="ct-channel-arr" aria-hidden="true">&nearr;</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right: Project Brief Form — powered by Formspree -->
+            <!--
+                ════════════════════════════════════════════
+                  HOW TO ACTIVATE EMAIL DELIVERY
+                ════════════════════════════════════════════
+                1. Sign up free at https://formspree.io
+                2. Create a new form → copy your Form ID
+                3. Replace YOUR_FORM_ID below with your ID
+                   e.g. action="https://formspree.io/f/xpzbkwgd"
+                Formspree will email you every submission.
+                Free plan: 50 submissions/month.
+                ════════════════════════════════════════════
+            -->
+            <div class="ct-form-panel" id="projectBrief">
+                <span class="ct-form-eyebrow">Project Brief</span>
+                <h3 class="ct-form-heading">Send us your brief.</h3>
+                <form action="https://formsubmit.co/rahulk19022@gmail.com" method="POST" id="contactForm" class="ct-form" novalidate>
+
+                    <!-- FormSubmit zero-backend delivery to primary and CC emails -->
+                    <input type="hidden" name="_cc" value="hello@theluxestudio.in">
+                    <input type="hidden" name="_subject" value="New Project Brief — LuxeStudio">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_next" id="formNextUrl" value="https://theluxestudio.in/thank-you.html">
+
+                    <!-- Name -->
+                    <div class="ct-field" id="fieldNameGroup">
+                        <label class="ct-field-label" for="clientName">Your Name <span style="color:var(--accent);" aria-hidden="true">*</span></label>
+                        <input type="text" id="clientName" name="name" class="ct-field-input"
+                            placeholder="e.g. Julian Vance" autocomplete="name" maxlength="60" required
+                            aria-describedby="nameError" aria-required="true">
+                        <div class="ct-field-error" id="nameError" role="alert"></div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="ct-field" id="fieldPhoneGroup">
+                        <div class="ct-field-header">
+                            <label class="ct-field-label" for="clientPhone">Phone Number</label>
+                            <span style="font-family:var(--font-mono);font-size:0.6875rem;color:rgba(17,17,17,0.45);text-transform:uppercase;">Optional</span>
+                        </div>
+                        <input type="tel" id="clientPhone" name="phone" class="ct-field-input"
+                            placeholder="e.g. +91 99870 31290 or +1 415 555 0192" autocomplete="tel" maxlength="24"
+                            aria-describedby="phoneError">
+                        <div class="ct-field-error" id="phoneError" role="alert"></div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="ct-field" id="fieldEmailGroup">
+                        <label class="ct-field-label" for="clientEmail">Email Address <span style="color:var(--accent);" aria-hidden="true">*</span></label>
+                        <input type="email" id="clientEmail" name="email" class="ct-field-input"
+                            placeholder="e.g. julian@studio.co" autocomplete="email" maxlength="80" required
+                            aria-describedby="emailError" aria-required="true">
+                        <div class="ct-field-error" id="emailError" role="alert"></div>
+                    </div>
+
+                    <!-- What to Build -->
+                    <div class="ct-field" id="fieldBriefGroup">
+                        <div class="ct-field-header">
+                            <label class="ct-field-label" for="clientBrief">What are you looking to build? <span style="color:var(--accent);" aria-hidden="true">*</span></label>
+                            <span class="ct-char-counter" id="briefCounter">0 / 15 min chars</span>
+                        </div>
+                        <textarea id="clientBrief" name="brief" class="ct-field-textarea"
+                            placeholder="Describe your vision, product scope, timeline, or key objectives — we'll take it from there."
+                            minlength="15" maxlength="2500" required
+                            aria-describedby="briefError briefCounter" aria-required="true"></textarea>
+                        <div class="ct-field-error" id="briefError" role="alert"></div>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="ct-submit-btn magnetic" id="submitBtn">
+                        <span id="submitBtnText">Send Brief</span>
+                        <span id="submitBtnIcon" aria-hidden="true">&rarr;</span>
+                    </button>
+
+                    <p class="ct-disclaimer">
+                        Zero spam &middot; NDA confidentiality &middot; Response within 24h
+                    </p>
+
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Copy Toast -->
+        <div class="copy-toast" id="copyToast" role="status" aria-live="polite">
+            Email copied to clipboard!
+        </div>
+
+        <!-- ── Footer ── -->
+        <footer class="footer footer-last-frame" id="footer" data-theme="dark" role="contentinfo">
+            <div class="footer-pulse-rail" id="footerPulseRail" aria-hidden="true">
+                <div class="footer-pulse-line"></div>
+                <div class="footer-pulse-point" id="footerPulsePoint"></div>
+            </div>
+
+            <div class="footer-frame-inner">
+                <div class="footer-statement-wrap">
+                    <span class="footer-statement">BUILT FOR WHAT'S NEXT.</span>
+                </div>
+
+                <div class="footer-signature-wrap" id="footerSignatureWrap">
+                    <div class="footer-signature-wordmark" id="footerWordmark" aria-label="LuxeStudio">
+                        <span class="sig-letter" data-letter="L">L</span><span class="sig-letter"
+                            data-letter="U">U</span><span class="sig-letter" data-letter="X">X</span><span
+                            class="sig-letter" data-letter="E">E</span><span class="sig-letter"
+                            data-letter="S">S</span><span class="sig-letter" data-letter="T">T</span><span
+                            data-letter="U" class="sig-letter">U</span><span class="sig-letter"
+                            data-letter="D">D</span><span class="sig-letter" data-letter="I">I</span><span
+                            class="sig-letter" data-letter="O">O</span>
+                    </div>
+                    <div class="footer-signature-sub"><span>CREATIVE TECHNOLOGY</span></div>
+                </div>
+
+                <div class="footer-frame-divider" aria-hidden="true"></div>
+
+                <div class="footer-metadata-container">
+                    <div class="footer-meta-primary-row">
+                        <nav class="footer-meta-nav" aria-label="Footer Navigation">
+                            <a href="work.html" class="footer-meta-link">WORK</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="services.html" class="footer-meta-link">SERVICES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="case-studies.html" class="footer-meta-link">CASE STUDIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="studio.html" class="footer-meta-link">STUDIO</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="contact.html" class="footer-meta-link is-active">CONTACT</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="faq.html" class="footer-meta-link">FAQ</a>
+                        </nav>
+                        <div class="footer-meta-contact">
+                            <a href="mailto:hello@theluxestudio.in"
+                                class="footer-contact-link">hello@theluxestudio.in</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-meta-legal-row">
+                        <span class="footer-copyright">&copy; 2026 LuxeStudio Creative Technology</span>
+                        <div class="footer-meta-nav">
+                            <a href="terms.html" class="footer-meta-link">TERMS</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="privacy.html" class="footer-meta-link">PRIVACY</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="cookies.html" class="footer-meta-link">COOKIES</a>
+                            <span class="footer-meta-sep" aria-hidden="true">/</span>
+                            <a href="accessibility.html" class="footer-meta-link">ACCESSIBILITY</a>
+                        </div>
+                        <button type="button" class="back-to-top-btn" id="backToTopBtn"
+                            aria-label="Scroll back to top of page">
+                            <span class="btt-text">BACK TO TOP</span>
+                            <span class="btt-arrow" aria-hidden="true">&uarr;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/cursor.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Email copy & Form environment handling -->
+    <script>
+        (function () {
+            const btn = document.getElementById('copyEmailBtn');
+            const toast = document.getElementById('copyToast');
+            if (btn && toast) {
+                btn.addEventListener('click', async function () {
+                    try {
+                        await navigator.clipboard.writeText('hello@theluxestudio.in');
+                        toast.textContent = 'Copied: hello@theluxestudio.in';
+                        toast.classList.add('show');
+                        setTimeout(function () { toast.classList.remove('show'); }, 3000);
+                    } catch (e) {
+                        window.location.href = 'mailto:hello@theluxestudio.in';
+                    }
+                });
+            }
+
+            // Route thank-you redirect to localhost if developing locally, or canonical production domain
+            const nextInput = document.getElementById('formNextUrl');
+            if (nextInput && window.location.origin) {
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                    nextInput.value = window.location.origin + '/thank-you.html';
+                }
+            }
+        })();
+
+        /* =========================================================
+           Strict Field-Level Form Validation
+           ========================================================= */
+        (function () {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+
+            const nameInput = document.getElementById('clientName');
+            const nameGroup = document.getElementById('fieldNameGroup');
+            const nameError = document.getElementById('nameError');
+
+            const phoneInput = document.getElementById('clientPhone');
+            const phoneGroup = document.getElementById('fieldPhoneGroup');
+            const phoneError = document.getElementById('phoneError');
+
+            const emailInput = document.getElementById('clientEmail');
+            const emailGroup = document.getElementById('fieldEmailGroup');
+            const emailError = document.getElementById('emailError');
+
+            const briefInput = document.getElementById('clientBrief');
+            const briefGroup = document.getElementById('fieldBriefGroup');
+            const briefError = document.getElementById('briefError');
+            const briefCounter = document.getElementById('briefCounter');
+
+            const submitBtn = document.getElementById('submitBtn');
+            const submitBtnText = document.getElementById('submitBtnText');
+            const submitBtnIcon = document.getElementById('submitBtnIcon');
+
+            // ── Validation Rules ──
+            function validateName(val) {
+                const trimmed = val.trim();
+                if (!trimmed) return 'Please enter your full name.';
+                if (trimmed.length < 2) return 'Name must be at least 2 characters.';
+                if (trimmed.length > 60) return 'Name must be under 60 characters.';
+                // Must contain only letters, spaces, hyphens, periods, or apostrophes
+                const validChars = /^[a-zA-Z\u00C0-\u024F\u1E00-\u1EFF\s'’.\-]+$/.test(trimmed);
+                const letterCount = (trimmed.match(/[a-zA-Z\u00C0-\u024F\u1E00-\u1EFF]/g) || []).length;
+                if (!validChars || letterCount < 2) {
+                    return 'Please enter a valid full name (letters and spaces only).';
+                }
+                return '';
+            }
+
+            function validatePhone(val) {
+                const trimmed = val.trim();
+                if (!trimmed) return ''; // Optional
+                const digits = trimmed.replace(/\D/g, '');
+                const validChars = /^[+]?[0-9\s().-]{7,24}$/.test(trimmed);
+                if (!validChars || digits.length < 7 || digits.length > 16) {
+                    return 'Please enter a valid phone number (7–15 digits, e.g. +91 99870 31290).';
+                }
+                return '';
+            }
+
+            function validateEmail(val) {
+                const trimmed = val.trim();
+                if (!trimmed) return 'Please enter your email address.';
+                // Strict RFC-compliant regex
+                const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+                if (!emailRegex.test(trimmed)) {
+                    return 'Please enter a valid email address (e.g. name@company.com).';
+                }
+                const parts = trimmed.split('@');
+                const domainParts = parts[1].split('.');
+                const tld = domainParts[domainParts.length - 1];
+                if (!tld || tld.length < 2) {
+                    return 'Please provide a valid domain extension (e.g. .com, .studio, .in).';
+                }
+                return '';
+            }
+
+            function validateBrief(val) {
+                const trimmed = val.trim();
+                if (!trimmed) return 'Please describe what you are looking to build.';
+                if (trimmed.length < 15) {
+                    return `Please provide a bit more detail (minimum 15 characters, currently ${trimmed.length}).`;
+                }
+                if (trimmed.length > 2500) {
+                    return 'Brief exceeds the maximum length of 2,500 characters.';
+                }
+                return '';
+            }
+
+            // ── UI State Updater ──
+            function updateFieldUI(group, errorEl, inputEl, errorMsg, isRequired) {
+                if (errorMsg) {
+                    group.classList.add('has-error');
+                    group.classList.remove('is-valid');
+                    errorEl.textContent = '';
+                    const bullet = document.createElement('span');
+                    bullet.setAttribute('aria-hidden', 'true');
+                    bullet.style.fontWeight = '700';
+                    bullet.textContent = '• ';
+                    errorEl.appendChild(bullet);
+                    errorEl.appendChild(document.createTextNode(errorMsg));
+                    inputEl.setAttribute('aria-invalid', 'true');
+                    return false;
+                } else {
+                    group.classList.remove('has-error');
+                    errorEl.textContent = '';
+                    inputEl.removeAttribute('aria-invalid');
+                    if (inputEl.value.trim().length > 0) {
+                        group.classList.add('is-valid');
+                    } else {
+                        group.classList.remove('is-valid');
+                    }
+                    return true;
+                }
+            }
+
+            // ── Real-Time Character Counter for Brief ──
+            function updateCharCounter() {
+                if (!briefCounter || !briefInput) return;
+                const len = briefInput.value.trim().length;
+                briefCounter.textContent = `${len} / 15 min chars`;
+                if (len >= 15) {
+                    briefCounter.classList.add('is-met');
+                } else {
+                    briefCounter.classList.remove('is-met');
+                }
+            }
+
+            // ── Event Listeners ──
+            // Name
+            nameInput.addEventListener('blur', () => {
+                updateFieldUI(nameGroup, nameError, nameInput, validateName(nameInput.value), true);
+            });
+            nameInput.addEventListener('input', () => {
+                if (nameGroup.classList.contains('has-error')) {
+                    updateFieldUI(nameGroup, nameError, nameInput, validateName(nameInput.value), true);
+                }
+            });
+
+            // Phone (Optional)
+            phoneInput.addEventListener('blur', () => {
+                updateFieldUI(phoneGroup, phoneError, phoneInput, validatePhone(phoneInput.value), false);
+            });
+            phoneInput.addEventListener('input', () => {
+                if (phoneGroup.classList.contains('has-error')) {
+                    updateFieldUI(phoneGroup, phoneError, phoneInput, validatePhone(phoneInput.value), false);
+                }
+            });
+
+            // Email
+            emailInput.addEventListener('blur', () => {
+                updateFieldUI(emailGroup, emailError, emailInput, validateEmail(emailInput.value), true);
+            });
+            emailInput.addEventListener('input', () => {
+                if (emailGroup.classList.contains('has-error')) {
+                    updateFieldUI(emailGroup, emailError, emailInput, validateEmail(emailInput.value), true);
+                }
+            });
+
+            // Brief
+            briefInput.addEventListener('blur', () => {
+                updateFieldUI(briefGroup, briefError, briefInput, validateBrief(briefInput.value), true);
+            });
+            briefInput.addEventListener('input', () => {
+                updateCharCounter();
+                if (briefGroup.classList.contains('has-error')) {
+                    updateFieldUI(briefGroup, briefError, briefInput, validateBrief(briefInput.value), true);
+                }
+            });
+
+            // Initialize counter on load
+            updateCharCounter();
+
+            // ── Form Submission ──
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const isNameValid = updateFieldUI(nameGroup, nameError, nameInput, validateName(nameInput.value), true);
+                const isPhoneValid = updateFieldUI(phoneGroup, phoneError, phoneInput, validatePhone(phoneInput.value), false);
+                const isEmailValid = updateFieldUI(emailGroup, emailError, emailInput, validateEmail(emailInput.value), true);
+                const isBriefValid = updateFieldUI(briefGroup, briefError, briefInput, validateBrief(briefInput.value), true);
+
+                if (!isNameValid || !isPhoneValid || !isEmailValid || !isBriefValid) {
+                    // Identify first invalid field
+                    const invalidFields = [
+                        { valid: isNameValid, group: nameGroup, input: nameInput },
+                        { valid: isPhoneValid, group: phoneGroup, input: phoneInput },
+                        { valid: isEmailValid, group: emailGroup, input: emailInput },
+                        { valid: isBriefValid, group: briefGroup, input: briefInput }
+                    ].filter(f => !f.valid);
+
+                    if (invalidFields.length > 0) {
+                        const first = invalidFields[0];
+                        first.group.classList.remove('shake');
+                        void first.group.offsetWidth; // Force CSS reflow
+                        first.group.classList.add('shake');
+                        first.input.focus();
+                        first.input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    return false;
+                }
+
+                // Everything valid: Dispatch submission
+                submitBtn.disabled = true;
+                submitBtnText.textContent = 'Dispatching Brief...';
+                submitBtn.innerHTML = '<span class="ct-spinner" aria-hidden="true"></span> <span>Dispatching Brief...</span>';
+
+                // Submit form
+                form.submit();
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
