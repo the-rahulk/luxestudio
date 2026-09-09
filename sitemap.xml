@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Homepage / Primary Hub -->
+    <url>
+        <loc>https://theluxestudio.in/</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://theluxestudio.in/assets/projects/atelier-one.jpg</image:loc>
+            <image:title>LuxeStudio Creative Technology &amp; Website Development</image:title>
+            <image:caption>LuxeStudio — Bespoke websites, digital systems and automation.</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Services Section -->
+    <url>
+        <loc>https://theluxestudio.in/#services</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Selected Work & Case Studies -->
+    <url>
+        <loc>https://theluxestudio.in/#work</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Studio & Ethos -->
+    <url>
+        <loc>https://theluxestudio.in/#studio</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- FAQ & Intel -->
+    <url>
+        <loc>https://theluxestudio.in/#faq</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Contact & Project Inquiry -->
+    <url>
+        <loc>https://theluxestudio.in/#contact</loc>
+        <lastmod>2026-09-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+</urlset>

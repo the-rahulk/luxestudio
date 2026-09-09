@@ -6267,3 +6267,199 @@ body.loaded .hero-scroll {
         display: none;
     }
 }
+
+/* =========================================================
+   SECTION 08: FAQ & INTEL (SEO & GEO KNOWLEDGE ARCHITECTURE)
+   ========================================================= */
+
+.faq-section {
+    background: #0D0D0D !important;
+    color: #F7F5F0 !important;
+    padding: clamp(90px, 12vh, 160px) var(--pad) !important;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faq-inner-container {
+    max-width: var(--container-width, 1400px);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.faq-section .section-meta {
+    color: rgba(247, 245, 240, 0.50);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 20px;
+    margin-bottom: clamp(40px, 6vh, 70px);
+}
+
+.faq-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: clamp(40px, 6vw, 100px);
+    align-items: start;
+}
+
+.faq-left-col {
+    position: sticky;
+    top: 120px;
+}
+
+.faq-title {
+    font-size: clamp(38px, 5.2vw, 76px);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+    color: #F7F5F0;
+    margin-bottom: clamp(20px, 2.5vh, 28px);
+}
+
+.faq-subtitle {
+    font-size: clamp(14px, 1.1vw, 17px);
+    line-height: 1.6;
+    color: rgba(247, 245, 240, 0.65);
+    max-width: 420px;
+    margin-bottom: clamp(28px, 4vh, 40px);
+}
+
+.faq-direct-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding-top: 24px;
+}
+
+.faq-cta-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: rgba(247, 245, 240, 0.45);
+}
+
+.faq-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent, #FF4A2F);
+    text-decoration: none;
+    transition: gap 0.25s ease, opacity 0.25s ease;
+}
+
+.faq-cta-link:hover {
+    gap: 10px;
+    opacity: 0.9;
+}
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    transition: border-color 0.3s ease;
+}
+
+.faq-item[open] {
+    border-bottom-color: rgba(255, 74, 47, 0.35);
+}
+
+.faq-trigger {
+    display: flex;
+    align-items: center;
+    padding: clamp(22px, 3vh, 32px) 0;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    gap: 16px;
+}
+
+.faq-trigger::-webkit-details-marker {
+    display: none;
+}
+
+.faq-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--accent, #FF4A2F);
+    flex-shrink: 0;
+    width: 24px;
+}
+
+.faq-question {
+    font-size: clamp(17px, 1.4vw, 22px);
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    color: #F7F5F0;
+    flex-grow: 1;
+    transition: color 0.25s ease;
+}
+
+.faq-item:hover .faq-question {
+    color: #FFFFFF;
+}
+
+.faq-item[open] .faq-question {
+    color: #FFFFFF;
+}
+
+.faq-icon {
+    font-family: var(--font-mono);
+    font-size: 20px;
+    line-height: 1;
+    color: var(--accent, #FF4A2F);
+    flex-shrink: 0;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+}
+
+.faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-content {
+    padding-left: 40px;
+    padding-bottom: clamp(24px, 3vh, 36px);
+    padding-right: 20px;
+    animation: faqSlideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-content p {
+    font-size: clamp(14px, 1.05vw, 16px);
+    line-height: 1.68;
+    color: rgba(247, 245, 240, 0.72);
+    margin: 0;
+}
+
+@keyframes faqSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive: 900px */
+@media (max-width: 900px) {
+    .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .faq-left-col {
+        position: static;
+    }
+    .faq-content {
+        padding-left: 0;
+    }
+}

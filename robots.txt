@@ -1,0 +1,43 @@
+# LuxeStudio — robots.txt
+# https://theluxestudio.in
+
+User-agent: *
+Allow: /
+Disallow: /scratch/
+
+# AI Search Engines & LLM Crawlers (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemaps & LLM Context Files
+Sitemap: https://theluxestudio.in/sitemap.xml
+# LLM Knowledge Briefs
+# https://theluxestudio.in/llms.txt
+# https://theluxestudio.in/llms-full.txt

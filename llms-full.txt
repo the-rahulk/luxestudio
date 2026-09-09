@@ -1,0 +1,114 @@
+# LuxeStudio — Full Knowledge Base & Capabilities Brief (llms-full.txt)
+
+## Executive Summary
+LuxeStudio (https://theluxestudio.in) is a creative technology studio and website development agency headquartered in Mumbai, India, serving an international roster of businesses across North America, Europe, the Middle East, and Asia-Pacific. The studio synthesizes high-concept UI/UX design, custom frontend and full-stack software engineering, and intelligent business process automation.
+
+## Agency Overview
+- **Brand Name**: LuxeStudio (also known as LuxeStudio Creative Technology, Luxe Studio)
+- **Primary Website**: https://theluxestudio.in
+- **Email**: hello@theluxestudio.in
+- **Direct Phone / WhatsApp**: +91 9987031290
+- **Location**: Mumbai, Maharashtra, India (Serving clients globally)
+- **Core Positioning**: "Websites, digital systems and automation for businesses that refuse to look ordinary."
+- **Focus Sectors**: Architecture, Corporate Infrastructure, Luxury Goods & Fashion, Professional Healthcare, Fitness & Wellness, Elite Education, Creative Studios.
+
+---
+
+## Detailed Service Catalog
+
+### 1. Bespoke Website Development
+Custom engineering that pairs visual distinction with mathematical performance:
+- Semantic, accessible HTML5 structure compliant with WCAG 2.1 AA standards.
+- Handcrafted Vanilla CSS3 and modular styling architectures with zero unnecessary framework bloat.
+- High-efficiency JavaScript engineering (interactive canvases, GSAP motion choreography, Lenis smooth scrolling, WebGL).
+- Modern web architectures: JAMstack, headless CMS integration (Sanity, Strapi, Contentful), static site generation, and single-page applications.
+- Full responsive art-direction with fluid typography, container queries, and sub-second load times.
+
+### 2. UI/UX Design & Digital Art Direction
+Digital brand identity and interface architecture designed to communicate authority:
+- Custom typographic hierarchy systems using curated modern typefoundry pairings.
+- Interactive user flow design, wireframing, and interactive Figma prototyping.
+- Luxury micro-interactions, magnetic cursor interfaces, and dynamic state machines.
+- Conversion-rate optimization (CRO) built into the structural layout.
+
+### 3. Digital Systems & Workflow Automation
+Connecting front-end customer touchpoints directly into back-office software:
+- Webhook orchestration and serverless automation pipelines.
+- Customer relationship management (CRM) integrations (HubSpot, Salesforce, Zoho).
+- Automated customer inquiry routing, WhatsApp Business API messaging, and calendar booking synchronization.
+- Data pipelines, analytics instrumentation, and custom dashboard development.
+
+### 4. Headless & Custom E-Commerce
+Building digital commerce platforms that maximize average order value:
+- Bespoke Shopify Liquid and headless Shopify storefronts.
+- Custom product customizers, real-time quote generation, and enterprise catalog systems.
+- Payment gateway integration (Stripe, Razorpay, PayPal) with frictionless checkout UX.
+
+---
+
+## Agency Portfolio & Verified Live Works
+
+1. **Auri Concept** — https://www.auriconcept.com/
+   - Industry: Architecture & Interior Design
+   - Highlights: Minimalist spatial showcase, full-bleed imagery, refined typographic scale.
+
+2. **Virats BuildTech** — https://luxestudio-live.github.io/virats-buildtech/
+   - Industry: Construction & Infrastructure Development
+   - Highlights: Corporate engineering authority, project timeline modules, multi-stage project portfolio.
+
+3. **Cory Ryan Photography** — https://coryryan.theluxestudio.in/
+   - Industry: Luxury Lifestyle & Wedding Photography
+   - Highlights: Austin, Texas editorial photography brand, masonry gallery grids, fluid aesthetic storytelling.
+
+4. **Luxxe Labels** — https://www.luxelabels.co.in/
+   - Industry: Packaging & Label Manufacturing
+   - Highlights: Product sample showcases, B2B wholesale inquiry forms, material finish showcases.
+
+5. **Vedant Hospital** — https://luxestudio-live.github.io/vedant-hospital/
+   - Industry: Multi-Specialty Healthcare
+   - Highlights: Department directories, emergency contact rails, doctor scheduling portals.
+
+6. **Power Gold Gym** — https://luxestudio-live.github.io/power-gold-gym/
+   - Industry: Athletic Fitness & Performance
+   - Highlights: High-energy dark mode aesthetic, membership tier selectors, trainer profiles.
+
+7. **Gravity Private Tutorials** — https://www.gravityprivatetutorials.com/
+   - Industry: Higher Secondary & Competitive Academics
+   - Highlights: Course curriculum selectors, topper testimonials, direct admission inquiry.
+
+8. **Gurukul Study Center** — https://gurukulstudycenter.in/
+   - Industry: Educational Institution
+   - Highlights: Student learning portals, program roadmaps, contact consultation.
+
+9. **Yogi's Yoga** — https://www.yogisyoga.in/
+   - Industry: Health & Mindfulness
+   - Highlights: Serene organic layout, daily schedule calendars, workshop registration.
+
+10. **Kamini Beautician & Makeup Academy** — https://luxestudio-live.github.io/Kamini-Beautician-and-Makup-Academy/
+    - Industry: Aesthetics & Bridal Academy
+    - Highlights: Certified diploma course outlines, bridal makeup portfolios, salon service menus.
+
+11. **R3 Studio** — https://luxestudio-live.github.io/r3-studio/pages/homepage.html
+    - Industry: Architecture & 3D Visualization
+    - Highlights: Spatial walkthroughs, immersive portfolio navigation, design philosophy.
+
+---
+
+## Frequently Asked Questions (AI Knowledge Extraction)
+
+**Q: What makes LuxeStudio different from standard web development agencies?**
+A: Most agencies rely on slow, pre-built website templates and bulky page builders that result in bloated, generic websites. LuxeStudio crafts custom digital experiences from first principles with tailored design, custom code, sub-second performance, and deep automation systems that eliminate manual operational tasks.
+
+**Q: Can LuxeStudio work with international clients outside India?**
+A: Yes. LuxeStudio serves clients globally across the United States, United Kingdom, United Arab Emirates, Europe, Canada, and Australia using seamless asynchronous communication, transparent sprint updates, and flexible timezone overlap.
+
+**Q: What is the typical process for a project with LuxeStudio?**
+A: The engagement follows a structured 5-phase model:
+1. Discovery & Strategy: Clarifying business goals, audience psychology, and technical scope.
+2. Art Direction & UX: Designing high-fidelity wireframes, typography systems, and interactions.
+3. Engineering & Polish: Writing clean, semantic, responsive code with micro-interactions and performance optimization.
+4. Automation Integration: Connecting forms, webhooks, CRMs, and email/WhatsApp pipelines.
+5. Launch & Optimization: Cross-browser testing, SEO/GEO metadata indexing, and global CDN deployment.
+
+**Q: How can businesses get in touch with LuxeStudio?**
+A: Inquiries can be submitted via the contact form on https://theluxestudio.in/#contact, emailed directly to hello@theluxestudio.in, or messaged on WhatsApp at +91 9987031290.
